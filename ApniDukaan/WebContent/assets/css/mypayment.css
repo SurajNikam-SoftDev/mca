@@ -1,0 +1,32 @@
+.mypayment-container{
+    background-color: white;     
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+    /* padding:10px 10px 0px 10px; */
+    border-bottom: 1px solid lightgrey;
+    padding: 0px 15px;
+    
+}
+
+.mypayment-bar{
+    border-bottom: 1px solid lightgray;
+}
+
+.header-title{
+    font-size: medium;
+    
+}
+
+.header-subtitle{
+    padding-top:10px;
+    color:grey;
+    font-size: smaller;
+    
+
+}
+
+.mypayment-img{
+    height: 50px;
+    width: 50px;
+    border:0.5px solid lightgray;
+    border-radius: 5px;
+}

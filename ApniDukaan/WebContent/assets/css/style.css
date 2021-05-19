@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body{
+    
+    font-family: 'Comfortaa', cursive;
+    font-weight: 500;
+    font-size:11px;
+    overflow-x: hidden;
+    background-color: #F7F7F7;
+}
+
+/* width */ 
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+    border-radius: 5px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d8a200; 
+    border-radius: 10px;
+} 
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #FFCA28;    
+}
+
+  
+.header{
+    background-color: #002060;
+    color: white;
+    padding: 15px;
+}
+
+.webtitle{
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.search-box-pre{
+    border-radius: 5px 0px 0px 5px;
+    font-size: 12px;
+    border:none;
+    padding: 20px;
+}
+
+.search-box-post{
+    border-radius: 0px 5px 5px 0px;
+    font-size: 13px;
+    background-color: #FFCA28;
+    color: white;
+    font-weight: bolder;
+    border:none
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  
+.carousel-indicators{
+    justify-content: center;
+    width:15%;
+}
+
+.carousel-indicators li{
+    background-color: #002060;
+    
+}
+
+.page-heading{
+    background-color: white;
+    padding:20px 15px 10px 15px;
+}
+ 
+.addproductbutton{
+    background-color: #002060;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+.addproductbutton:link {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+  
+.addproductbutton:visited {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+  
+.addproductbutton:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+  
+.addproductbutton:active {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+/* End header */
+/* ************************************************************* */
+
+
+
+
+
+/* ************************************************************* */
+/* start footer */
+.back-to-top{
+    height:100px;
+    width:100%;
+    background-color: #002060;
+    color: white;
+    text-align: center;
+    padding:15px;
+}
+
+.back-to-top-button:hover{
+    color:white;
+    font-weight: bolder;
+}
+
+.back-to-top-button{
+    color:white;
+    font-weight: bolder;
+
+}
+
+/* footer menu */
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    overflow-x: auto;
+    
+}
+
+.nav__link {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__icon{
+    color: #002060;
+} 
+
+.nav__text {
+    color: #002060;
+    font-weight: bolder;
+} 

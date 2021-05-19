@@ -1,0 +1,12 @@
+.viewshop-container{
+    background-color: white;
+    padding: 15px;
+}
+
+.staricon{
+    font-size:15px;
+  }
+  
+.checked {
+    color: orange;
+}

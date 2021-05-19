@@ -1,0 +1,19 @@
+.growyourbusiness-container{
+    background-color: white;
+    padding: 25px;
+}
+
+
+
+.description .question{
+    font-size: large;
+    font-weight: bolder;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.description .answer{
+    text-align: justify ;
+    font-size: small;
+    font-stretch: normal;
+}
