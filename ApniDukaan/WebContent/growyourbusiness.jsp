@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ApniDukaan :: Help & FAQ</title>
+    <title>ApniDukaan :: Grow Your Business</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <!-- Bootstrap CSS -->
@@ -12,7 +12,7 @@
     
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/helpfaq.css">
+    <link rel="stylesheet" href="assets/css/growyourbusiness.css">
 
     <!-- jquery-ui CSS -->
     
@@ -28,18 +28,17 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.html'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.html'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.html'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
-                    
                 </div>
                 <!--/row-->
                 
@@ -50,18 +49,17 @@
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" style="margin:0px">
                 <li class="breadcrumb-item" aria-current="page">Account</li>
-                <li class="breadcrumb-item active" aria-current="page">Refer & Earn</li>
+                <li class="breadcrumb-item active" aria-current="page">Grow Your Business</li>
             </ol>
         </nav>
-        
+    
         <div class="pageheading text-center p-3" style = "background-color: white;">
-            <b style = "font-size: 14px;">Help & FAQ</b>
+            <b style = "font-size: 14px;">Grow Your Business</b>
         </div>
-        
     </header>
 
     
-    <div class="helpfaq-container mt-2">
+    <div class="growyourbusiness-container mt-2">
         <div class = "description">
             <h6 class="text-center">For Buyers</h6>
             <b class = "question">1. How to contact the seller?  </b>
@@ -81,16 +79,16 @@
                         
             <b class = "question">4. What is the process of returns? </b>
             <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
+                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the PopShop app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
 
-                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use ApniDukaan shipping, you will need to handle the shipping of the return yourself.    
+                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use PopShop shipping, you will need to handle the shipping of the return yourself.    
             </p>
 
             <b class = "question">5. Amount got debited from my bank account, payment is failed?</b>
             <p class = "answer">
                 If your amount has been debited and payment status shows 'Failed', do not worry, your money is safe in the payment gateway which will be refunded to you within 5-8 working days.
 
-                Please check your bank statement for a refund from 'NXTBillion'. If you are facing issues please email to us on help@ApniDukaan.in and attach a screenshot of your order.
+                Please check your bank statement for a refund from 'NXTBillion'. If you are facing issues please email to us on help@popshop.in and attach a screenshot of your order.
             </p>
                         
             <b class = "question">6. How to return a product and get a refund?</b>
@@ -102,14 +100,14 @@
                 If there is no return button on your order, this product might not be eligible for return. 
             </p>    
 
-            <b class = "question">7. I have a problem with the ApniDukaan seller, how to report it?</b>
+            <b class = "question">7. I have a problem with the PopShop seller, how to report it?</b>
             <p class = "answer">
-                If you have a problem with your seller, please write a mail to us on help@ApniDukaan.in. Please mention what problem you are facing and also attach a full screenshot of your seller's profile with the mail. We will try our best to provide a resolution.
+                If you have a problem with your seller, please write a mail to us on help@popshop.in. Please mention what problem you are facing and also attach a full screenshot of your seller's profile with the mail. We will try our best to provide a resolution.
             </p>  
 
             <b class = "question">8. I want to block a person from irritating me.</b>
             <p class = "answer">
-                If someone is sending you unnecessary messages and you would want to stop receiving messages from them on ApniDukaan, go to the person's chat, click on the three dot button on the top right hand side corner and click on 'Block'.
+                If someone is sending you unnecessary messages and you would want to stop receiving messages from them on Popshop, go to the person's chat, click on the three dot button on the top right hand side corner and click on 'Block'.
 
                 After blocking, the person cannot view your posts or send you any messages.
 
@@ -120,13 +118,13 @@
             <h6 class="text-center">For Sellers</h6>
             <b class = "question">1. How to get orders?  </b>
             <p class = "answer">
-                To get orders, just share your website or product link with your customers over WhatsApp, Facebook Marketplace, etc. They can order your product directly through the website, or even from the ApniDukaan app. 
+                To get orders, just share your website or product link with your customers over WhatsApp, Facebook Marketplace, etc. They can order your product directly through the website, or even from the PopShop app. 
             </p>
             
             <b class = "question">2. How is my payment calculated? </b>
             <p class = "answer">
-                Your payment = Selling Price - ApniDukaan Delivery Fee. <br>
-                The delivery fee for your order is calculated based upon the ApniDukaan Shipping Rate Card. To check the rate card, please go to ‘Account’ tab in the app and click ‘ApniDukaan Shipping Charges’.
+                Your payment = Selling Price - PopShop Delivery Fee. <br>
+                The delivery fee for your order is calculated based upon the PopShop Shipping Rate Card. To check the rate card, please go to ‘Account’ tab in the app and click ‘PopShop Shipping Charges’.
             </p>
             
             <b class = "question">3. When do I get the payment? </b>
@@ -140,14 +138,14 @@
                         
             <b class = "question">4. What is the process of returns? </b>
             <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
+                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the PopShop app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
 
-                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use ApniDukaan shipping, you will need to handle the shipping of the return yourself.    
+                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use PopShop shipping, you will need to handle the shipping of the return yourself.    
             </p>
 
             <b class = "question">5. What happens if an order is unserviceable for pick up?</b>
             <p class = "answer">
-                In case of a product being unserviceable in ‘ApniDukaan Shipping’ the system will automatically convert the order to ‘Self Shipping’. Order management and payment system will be changed to ‘Self Shipping’ mode
+                In case of a product being unserviceable in ‘PopShop Shipping’ the system will automatically convert the order to ‘Self Shipping’. Order management and payment system will be changed to ‘Self Shipping’ mode
             </p>
                         
             <b class = "question">6. How to pack and ship the product?</b>
@@ -177,23 +175,23 @@
 
     <footer> 
         <nav class="nav">
-            <a href="index.html" class="nav__link" style = "text-decoration: none;">
+            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
               <i class="material-icons nav__icon">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.html" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon active">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
                   <i class="material-icons nav__icon">notifications</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">person</i>
                 <span class="nav__text">Account</span>
               </a>
@@ -208,7 +206,7 @@
     
     <script type="text/JavaScript">
         function  validation() {
-            window.location.href = "index.html";
+            window.location.href = "index.jsp";
         }
     </script>
     <script>

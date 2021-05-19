@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ApniDukaan :: Edit Product</title>
+    <title>ApniDukaan :: Add Address</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <!-- Bootstrap CSS -->
@@ -28,16 +28,16 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.html'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.html'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.html'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                 </div>
                 <!--/row-->
@@ -48,8 +48,8 @@
 
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" style="margin:0px">
-                <li class="breadcrumb-item" aria-current="page">Shop</li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
+                <li class="breadcrumb-item" aria-current="page">Account</li>
+                <li class="breadcrumb-item active" aria-current="page">Add Address</li>
             </ol>
         </nav>
     
@@ -59,99 +59,43 @@
     
     <div class="container form-container">
         <div class = "form-header pt-3">
-            <h5>Edit Product</h5>
+            <h5>Add Address</h5>
         </div>
         <form class = "form-body">
             <div class="form-group">
-                <label for="inputAddress">Product Name</label>
-                <input type="text" class="form-control" name="productname" placeholder="Product Name">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Name">
             </div>
             <div class="form-group">
-                <label for="inputAddress">Product SubTitle</label>
-                <input type="text" class="form-control" name="productsubtitle" placeholder="Product SubTitle">
+                <label for="mobilenumber">Mobile Number</label>
+                <input type="text" class="form-control" name="mobilenumber" placeholder="Mobile Number">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="productprice">Price (in Rs.)</label>
-                    <input type="text" class="form-control" name="productprice" placeholder="Product Price">
+                    <label for="housenobuildingname">House No. / Building Name</label>
+                    <input type="text" class="form-control" name="housenobuildingname" placeholder="House No. / Building Name">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="category">Category</label>
-                    <select name="category" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose Category...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    </select>
+                    <label for="roadnameareacolony">Road Name, Area, Colony</label>
+                    <input type="text" class="form-control" name="roadnameareacolony" placeholder="Road Name, Area, Colony">
                 </div>
-            </div>
-
-            <hr>
-
-            <div class = "form-row">
-                <div class="col-10">
-                    <p>Allow To Cash On Delivery</p>
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" name="city" placeholder="City">
                 </div>
-                <div class="col-2 text-right">
-                    <input type = "checkbox" >
+                <div class="form-group col-md-6">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" name="state" placeholder="State">
                 </div>
-                <div class="col-10">
-                    <p>Allow Return</p>
+                <div class="form-group col-md-6">
+                    <label for="landmark">Lankmark</label>
+                    <input type="text" class="form-control" name="landmark" placeholder="Lankmarke">
                 </div>
-                <div class="col-2 text-right">
-                    <input type = "checkbox">
+                <div class="form-group col-md-6">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" class="form-control" name="pincode" placeholder="Pincode">
                 </div>
-                
-            </div>
-            <div class = "notice-container">
-                <div class="col-md-12">
-                    <p>Free Delivery for first 5 Orders.</p>
-                    <p>Delivery Fee Rs.40</p>
-                    <p>Best-in-class services from trusted courier partners</p>
-                </div>
-            </div>
-
-            <hr>
-            <div class = "form-header text-left">
-                <b>Additional Options</b>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="form-group col">
-                            <label for="sizeheight">Size (in Height)</label>
-                            <input type="text" class="form-control" name="sizeheight" placeholder="Size In Height">
-                        </div>
-                        <div class="form-group col">
-                            <label for="sizewidth">Size (in Width)</label>
-                            <input type="text" class="form-control" name="sizewidth" placeholder="Size In Width">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="form-group col">
-                            <label for="stock">Total Stock</label>
-                            <input type="text" class="form-control" name="stock" placeholder="Total Stock">
-                        </div>
-                        <div class="form-group col">
-                            <label for="returnperiod">Return Period</label>
-                            <input type="text" class="form-control" name="returnperiod" placeholder="Return Period">
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <br>
-                        <textarea style="width: 100%;"></textarea>
-                    </div>
-                </div>
-                
-                
-            </div>
-            
+            </div>            
             <div class = "text-center">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
@@ -202,23 +146,23 @@
 
     <footer> 
         <nav class="nav">
-            <a href="index.html" class="nav__link" style = "text-decoration: none;">
+            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
               <i class="material-icons nav__icon">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.html" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon active">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
                   <i class="material-icons nav__icon">notifications</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">person</i>
                 <span class="nav__text">Account</span>
               </a>
@@ -233,7 +177,7 @@
     
     <script type="text/JavaScript">
         function  validation() {
-            window.location.href = "index.html";
+            window.location.href = "myaddress.jsp";
         }
     </script>
     <script>

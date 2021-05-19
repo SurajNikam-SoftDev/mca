@@ -27,16 +27,16 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.html'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.html'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.html'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     
                 </div>
@@ -72,7 +72,7 @@
                     <td>nikam</td>
                     <td>8788451215</td>
                     <td>suraj123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>akshay</td>
@@ -80,7 +80,7 @@
                     <td>nikam</td>
                     <td>1846524121</td>
                     <td>akshay123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>mayur</td> 
@@ -88,7 +88,7 @@
                     <td>pawale</td>
                     <td>2541251215</td>
                     <td>mayur123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>suresh</td>
@@ -96,7 +96,7 @@
                     <td>choudhary</td>
                     <td>2463541515</td>
                     <td>suresh123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>vishal</td>
@@ -104,7 +104,7 @@
                     <td>chillal</td>
                     <td>2168574122</td>
                     <td>vishal123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>ajay</td>
@@ -112,7 +112,7 @@
                     <td>shinde</td>
                     <td>13525010652</td>
                     <td>ajay123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>akash</td>
@@ -120,7 +120,7 @@
                     <td>shinde</td>
                     <td>8416524121</td>
                     <td>akash123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>aniket</td> 
@@ -128,7 +128,7 @@
                     <td>mandavkar</td>
                     <td>7524151215</td>
                     <td>akash123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>sumesh</td>
@@ -136,7 +136,7 @@
                     <td>ojha</td>
                     <td>8653541515</td>
                     <td>sumesh123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>gaurav</td>
@@ -144,7 +144,7 @@
                     <td>kaveri</td>
                     <td>6118574122</td>
                     <td>gaurav123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
                 <tr>
                     <td>shubham</td>
@@ -152,7 +152,7 @@
                     <td>pawar</td>
                     <td>8755251215</td>
                     <td>shubham123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.html'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='vieworder.jsp'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
                 </tr>
             </tbody>
             <tfoot>
@@ -179,23 +179,23 @@
     </div>
     <footer> 
         <nav class="nav">
-            <a href="index.html" class="nav__link" style = "text-decoration: none;">
+            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
               <i class="material-icons nav__icon">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.html" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon active">shopping_bag</i>
                 <span class="nav__text">Order</span>
             </a>
-            <a href="shop.html" class="nav__link"  style = "text-decoration: none;">
+            <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">dashboard</i>
                 <span class="nav__text">Shop</span>
             </a>
-            <a href="notification.html" class="nav__link"  style = "text-decoration: none;">
+            <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">notifications</i>
                 <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
             </a>
-            <a href="account.html" class="nav__link"  style = "text-decoration: none;">
+            <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">person</i>
                 <span class="nav__text">Account</span>
             </a>
@@ -226,7 +226,7 @@
 
         $('.myDataTable thead .search-col').each(function(){
             var title = $(this).text();
-            $(this).html('<input type = "text" placeholder = "Search '+title+'" />');
+            $(this).jsp('<input type = "text" placeholder = "Search '+title+'" />');
         });
         
         table.columns().every(function(){

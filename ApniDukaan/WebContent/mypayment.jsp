@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ApniDukaan :: Shop Settings</title>
+    <title>ApniDukaan :: My Payment</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <!-- Bootstrap CSS -->
@@ -12,7 +12,7 @@
     
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/mypayment.css">
 
     <!-- jquery-ui CSS -->
     
@@ -28,16 +28,16 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.html'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.html'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
-                    <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.html'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                    <div class="col text-left pt-1">
+                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     
                 </div>
@@ -50,82 +50,71 @@
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" style="margin:0px">
                 <li class="breadcrumb-item" aria-current="page">Account</li>
-                <li class="breadcrumb-item active" aria-current="page">Shop Settings</li>
+                <li class="breadcrumb-item active" aria-current="page">My Payment</li>
             </ol>
         </nav>
     
-        
+        <div class="pageheading text-center p-3" style = "background-color: white;">
+            <b style = "font-size: 14px;">My Payment</b>
+        </div>
     </header>
 
     
-    <div class="container form-container">
-        <div class = "form-header pt-3">
-            <h5>Shop Settings</h5>
+    <div class=" mypayment-container">
+        <div class = "row mypayment-bar mt-2">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Pending</p>
+            </div>
         </div>
-        <form class = "form-body">
-            <div class="form-group">
-                <label for="inputAddress">Shop Name</label>
-                <input type="text" class="form-control" name="shopname" placeholder="Shop Name">
+        <div class = "row mypayment-bar">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Pending</p>
             </div>
-            <div class="form-group">
-                <label for="inputAddress">Your Website Link</label>
-                <input type="text" class="form-control" name="yourwebsitelink" placeholder="Your Website Link">
+        </div>
+        <div class = "row mypayment-bar">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Paid</p>
             </div>
-            <div class="form-group">
-                <label for="about">About</label>
-                <br>
-                <textarea style="width: 100%;font-size:12px;" class = "form-control" placeholder="Describe yourself here..."></textarea>
+        </div>
+        <div class = "row mypayment-bar">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Pending</p>
             </div>
-            
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="prepaidorderdiscount">Prepaid Order Discount</label>
-                    <input type="text" class="form-control" name="prepaidorderdiscount" placeholder="Prepaid Order Discount">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="courierpreference">Manage Courier Preference</label>
-                    <select name="courierpreference" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose Courier Preference...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    </select>
-                </div>
-            </div>            
-            <div class = "text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+        </div>
+        <div class = "row mypayment-bar">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Paid</p>
             </div>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class = "modal-symbol">
-                            <img src="https://media.giphy.com/media/YlSR3n9yZrxfgVzagm/giphy.gif" class="modal-image" style = "height:100px; width: 100px;"> <!-- saved -->
-                            <!-- <img src="https://media.giphy.com/media/L2NX9o62VOsZqH8IPp/giphy.gif" class="modal-image">  delete -->
-                            <!-- <img src="https://media.giphy.com/media/hlvIX2f1zeLESr2DI4/giphy.gif" class="modal-image">  update -->  
-                        </div>
-                    Data Saved Successfully!!!
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-primary" onclick = "validation()">Okay</button>
-                    </div>
-                </div>
-                </div>
+        </div>
+        <div class = "row mypayment-bar">
+            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
+                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+            </div> 
+            <div class = "col-9 mypayment-header pt-2 pm-2" >
+                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
+                <p class = "header-subtitle">Pending</p>
             </div>
-            
-            <br>
-        </form>
-        
+        </div>
     </div>
     
 
@@ -141,23 +130,23 @@
 
     <footer> 
         <nav class="nav">
-            <a href="index.html" class="nav__link" style = "text-decoration: none;">
+            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
               <i class="material-icons nav__icon">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.html" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon active">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.html" class="nav__link"  style = "text-decoration: none;">
-                  <i class="material-icons nav__icon">notifications</i>
+              <a href="mypayment.jsp" class="nav__link"  style = "text-decoration: none;">
+                  <i class="material-icons nav__icon">mypayments</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">person</i>
                 <span class="nav__text">Account</span>
               </a>
@@ -172,7 +161,7 @@
     
     <script type="text/JavaScript">
         function  validation() {
-            window.location.href = "account.html";
+            window.location.href = "index.jsp";
         }
     </script>
     <script>

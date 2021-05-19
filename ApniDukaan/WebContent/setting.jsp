@@ -28,16 +28,16 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.html'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.html'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.html'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     
                 </div>
@@ -583,23 +583,23 @@ All calls to ApniDukaan are completely confidential. However, the your calls may
 
     <footer> 
         <nav class="nav">
-            <a href="index.html" class="nav__link" style = "text-decoration: none;">
+            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
               <i class="material-icons nav__icon">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.html" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon active">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
                   <i class="material-icons nav__icon">notifications</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.html" class="nav__link"  style = "text-decoration: none;">
+              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">person</i>
                 <span class="nav__text">Account</span>
               </a>
@@ -614,7 +614,7 @@ All calls to ApniDukaan are completely confidential. However, the your calls may
     
     <script type="text/JavaScript">
         function  validation() {
-            window.location.href = "index.html";
+            window.location.href = "index.jsp";
         }
     </script>
     <script>
