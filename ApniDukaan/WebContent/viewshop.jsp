@@ -37,7 +37,7 @@
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     <div class="col-md-12 pt-2">
                         <form action="#" ui-widget method="GET" >
@@ -94,7 +94,7 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">  
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">  
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -108,7 +108,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -126,7 +126,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -140,7 +140,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -158,7 +158,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -172,39 +172,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
-                            <div class="card-footer">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
-                            <div class="card-footer">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -222,7 +190,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -236,7 +204,39 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
+                            <div class="card-footer">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
+                            <div class="card-footer">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -254,7 +254,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -268,7 +268,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -286,7 +286,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -300,7 +300,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -318,7 +318,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
@@ -332,7 +332,7 @@
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='http:\\ApniDukaan\\viewproduct.jsp'" style = "text-decoration: none;">    
+                            <a href="javascript:void(0)" onclick="location.href='viewproduct.jsp'" style = "text-decoration: none;">    
                             <div class="card-footer">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
