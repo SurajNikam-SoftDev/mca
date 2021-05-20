@@ -50,7 +50,7 @@
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" style="margin:0px">
                 <li class="breadcrumb-item" aria-current="page">Account</li>
-                <li class="breadcrumb-item active" aria-current="page">Refer & Earn</li>
+                <li class="breadcrumb-item active" aria-current="page">Help & FAQ</li>
             </ol>
         </nav>
         
