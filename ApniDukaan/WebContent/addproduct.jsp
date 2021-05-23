@@ -13,7 +13,10 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
-
+	<link rel="stylesheet" href="assets/css/addproduct.css">
+	<link href="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.css" rel="stylesheet">
+	
+	
     <!-- jquery-ui CSS -->
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
@@ -148,8 +151,58 @@
                         <textarea style="width: 100%;"></textarea>
                     </div>
                 </div>
+                <div class="col-md-12" >
+				  <div class="form-group">
+                        <label for="upload">Upload Images</label>
+                  </div>
+				</div>
+                <div class="col-md-12" >
+				  <div class="form-group">
+                        <div id="drag-drop-area"></div>
+                  </div>
+				</div>
                 
+                        
+                <!-- <div class="col-md-6">
+                	<div class="form-group">
+                    	<input type="file" id="name" class="form-control" placeholder="Select File..." style = "font-size:11px;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                	<div class="form-group">
+                    	<input type="text" id="email" class="form-control" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                	<div class="form-group">
+                    	<input type="button" class="add-row" value="Add Row" style = "float:right;outline:none;">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <table class = "table">
+					       <thead>
+					           <tr>
+					               <th>Select</th>
+					               <th>Name</th>
+					               <th>Preview</th>
+					           </tr>
+					       </thead>
+					       <tbody></tbody>
+					   </table>
+					   
+                    </div>
+                    
+                </div> -->
                 
+                <!-- 
+                <div class="col-md-12">
+                    <div class="form-group">
+                		<button type="button" class="delete-row" style = "float:right;margin:10px 0px; ">Delete Row</button>
+                    </div>
+                </div> -->
+            
+            
             </div>
             
             <div class = "text-center">
@@ -230,7 +283,39 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.js"></script>
     
+    <script>
+	    var uppy = Uppy.Core()
+	    .use(Uppy.Dashboard, {
+	      inline: true,
+	      target: '#drag-drop-area'
+	    })
+	    .use(Uppy.Tus, {endpoint: 'https://master.tus.io/files/'}) //you can put upload URL here, where you want to upload images
+	
+		uppy.on('complete', (result) => {
+		  console.log('Upload complete! We’ve uploaded these files:', result.successful)
+		})    
+	  
+	  	uppy.getPlugin('Dashboard').setOptions({
+		  width: 1200
+		})
+		
+		uppy.setOptions({
+		  restrictions: { 
+			  	maxFileSize: null,
+			    minFileSize: null,
+			    maxTotalFileSize: 250,
+			    maxNumberOfFiles: 10,
+			    minNumberOfFiles: null,
+			    allowedFileTypes: null  
+		  },
+		  
+		})
+		
+		
+	</script>
+
     <script type="text/JavaScript">
         function  validation() {
             window.location.href = "Home";
