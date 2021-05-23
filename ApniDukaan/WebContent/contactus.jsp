@@ -28,16 +28,16 @@
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
-                        <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                        <a href="javascript:void(0)" onclick="location.href='Home'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
                     </div>
                     <div class="col text-left pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
+                        <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
                         <b style="padding-top: 0px;">Your Location</b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                 </div>
                 <!--/row-->
@@ -81,24 +81,24 @@
 
     <footer> 
         <nav class="nav">
-            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
-              <i class="material-icons nav__icon">home</i>
+            <a href="Home" class="nav__link" style = "text-decoration: none;">
+              <i class="material-icons nav__icon ">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="Order" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
-                <i class="material-icons nav__icon active">dashboard</i>
+              <a href="Shop" class="nav__link"  style = "text-decoration: none;">
+                <i class="material-icons nav__icon">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
+              <a href="Notification" class="nav__link"  style = "text-decoration: none;">
                   <i class="material-icons nav__icon">notifications</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
-                <i class="material-icons nav__icon">person</i>
+              <a href="Account" class="nav__link"  style = "text-decoration: none;">
+                <i class="material-icons nav__icon active">person</i>
                 <span class="nav__text">Account</span>
               </a>
           </nav>
@@ -112,41 +112,10 @@
     
     <script type="text/JavaScript">
         function  validation() {
-            window.location.href = "index.jsp";
+            window.location.href = "Home";
         }
     </script>
-    <script>
-
-        var slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("demo");
-          var captionText = document.getElementById("caption");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " active";
-          captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-    </script>
-
+    
     <script>
         function topFunction() {
         document.body.scrollTop = 0;

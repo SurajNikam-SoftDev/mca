@@ -37,17 +37,17 @@
             <div class="container" style = "padding:0px">
               <div class="row">
                 <div class="col-sm-12 webtitle text-center">
-                    <a href="javascript:void(0)" onclick="location.href='index.jsp'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
-                </div>
-                <div class="col text-left pt-1">
-                    <a href="javascript:void(0)" onclick="location.href='myaddress.jsp'" style = "color:white;text-decoration: none;">
-                    <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
-                    <b style="padding-top: 0px;">Your Location</b>
-                    </a>
-                </div>
-                <div class="col text-right pt-1">
-                    <a href="javascript:void(0)" onclick="location.href='addtocart.jsp'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
-                </div>
+                        <a href="javascript:void(0)" onclick="location.href='Home'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                    </div>
+                    <div class="col text-left pt-1">
+                        <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
+                        <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
+                        <b style="padding-top: 0px;">Your Location</b>
+                        </a>
+                    </div>
+                    <div class="col text-right pt-1">
+                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                    </div>
                 <div class="col-md-12 pt-2">
                     <form action="#" ui-widget method="GET" >
                         <div class="input-group">
@@ -214,7 +214,7 @@
               <h6>Shop Name</h6>
           </div>
           <div class="col text-right pt-3">
-            <a href="javascript:void(0)" onclick="location.href='viewshop.jsp'"  class = "addproductbutton" style = "text-decoration: none;">VIEW SHOP</a>
+            <a href="javascript:void(0)" onclick="location.href='ViewShop'"  class = "addproductbutton" style = "text-decoration: none;">VIEW SHOP</a>
           </div>
       </div>   
     </div>
@@ -244,24 +244,24 @@
 
     <footer> 
         <nav class="nav">
-            <a href="index.jsp" class="nav__link" style = "text-decoration: none;">
-              <i class="material-icons nav__icon">home</i>
+            <a href="Home" class="nav__link" style = "text-decoration: none;">
+              <i class="material-icons nav__icon ">home</i>
               <span class="nav__text">Home</span>
             </a>
-            <a href="order.jsp" class="nav__link nav__link"  style = "text-decoration: none;">
+            <a href="Order" class="nav__link nav__link"  style = "text-decoration: none;">
                 <i class="material-icons nav__icon">shopping_bag</i>
                 <span class="nav__text">Order</span>
               </a>
-              <a href="shop.jsp" class="nav__link"  style = "text-decoration: none;">
-                <i class="material-icons nav__icon active">dashboard</i>
+              <a href="Shop" class="nav__link"  style = "text-decoration: none;">
+                <i class="material-icons nav__icon">dashboard</i>
                 <span class="nav__text">Shop</span>
               </a>
-              <a href="notification.jsp" class="nav__link"  style = "text-decoration: none;">
+              <a href="Notification" class="nav__link"  style = "text-decoration: none;">
                   <i class="material-icons nav__icon">notifications</i>
                   <span class="nav__text">Notify<span class="badge rounded-pill bg-warning " style="font-size: 10px;">10</span></span>
                 </a>
-              <a href="account.jsp" class="nav__link"  style = "text-decoration: none;">
-                <i class="material-icons nav__icon">person</i>
+              <a href="Account" class="nav__link"  style = "text-decoration: none;">
+                <i class="material-icons nav__icon active">person</i>
                 <span class="nav__text">Account</span>
               </a>
           </nav>
@@ -272,18 +272,15 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="assets/js/jquery.elevatezoom.js"></script>
     
     <script type="text/JavaScript">
-      $("#zoom_01").elevateZoom();
-      
-      function addtocart()
+     function addtocart()
       {
-        window.location.href = "addtocart.jsp";
+        window.location.href = "AddToCart";
       }
       function buynow()
       {
-        window.location.href = "productbuy.jsp";
+        window.location.href = "ProductBuy";
       }
 
     </script>
