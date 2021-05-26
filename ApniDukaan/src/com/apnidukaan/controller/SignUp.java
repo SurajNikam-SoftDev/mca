@@ -9,11 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.apnidukaan.bean.CustomerBean;
-import com.apnidukaan.bean.SellerBean;
 import com.apnidukaan.bean.UserBean;
-import com.apnidukaan.dao.CustomerDao;
-import com.apnidukaan.dao.SellerDao;
 import com.apnidukaan.dao.UserDao;
 
 /**
