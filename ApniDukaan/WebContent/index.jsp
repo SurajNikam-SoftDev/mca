@@ -9,32 +9,38 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
+    <!-- <link rel="stylesheet" href="assets/css/products.css"> -->
 
     <!-- jquery-ui CSS -->
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
-    
 </head>
-<body >  
-<%
+<style> 
+/* .wrapper { margin: 150px auto; } */
+
+
+
+</style>
+<body >
+ <%
 	if(session.getAttribute("emailid")==null)
 	{
 		response.sendRedirect("./LogIn");
 	}	
-%>
+%>    
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
                         <a href="javascript:void(0)" onclick="location.href='Home'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
-                    </div>
-                    <div class="col-sm-12 text-right mt-2">
-                        <b>Welcome, <b style = "font-size:small;"><%=  session.getAttribute("emailid") %></b></b>
                     </div>
                     <div class="col text-left pt-1">
                         <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
@@ -46,11 +52,11 @@
                         <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     <div class="col-md-12 pt-2">
-                        <form action="#" ui-widget method="GET" >
+                        <form action="Search" method="GET" >
                             <div class="input-group">
                                 <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text search-box-post"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></span>
+                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
                                 </div>
                               </div>
                         </form>
@@ -61,7 +67,7 @@
             <!--container-->
         </div>
 
-        <div id="demo" class="carousel slide" data-ride="carousel" style="z-index:0;" >
+        <div id="demo" class="carousel slide" data-ride="carousel" style="z-index:0;">
             <ul class="carousel-indicators" >
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
@@ -106,328 +112,1645 @@
         
         
     </header>
-    
-    <div class="container-fluid pt-2" style = "padding:25px" >
-        <div class="row">
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>  
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>  
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>  
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            
-            
-            
-                  
-        </div>
-    </div>  
-    <br>    
-    <div class="page-pagination">
-        <a href="#" class="previous">&laquo; Previous</a>
-        <a href="#" class="next">Next &raquo;</a>      
-    </div> 
 
-    <div class="container " >
+   	 <!-- Wrapper -->
+    <div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Top Offers</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  		
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Fashion</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Electronics</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Home Appliances</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Grocery</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Mobile's</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+			<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Women's Beauty</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Men's Footwear</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Baby And Kids</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Health Care Essentials</b>
+		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  	</div>
+		  	<hr>
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                        <div class="card-body" style = "border-radius:18px;">
+                        	<p class="card-text text-left"><b>Product Title </b></p>
+                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example" >
+                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
+                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                        </div>
+                     </div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+	
+	
+	
+    <div class="container mt-4" >
         <p>Copyright @ 2021 All Rights Reserved. Terms of Use | Privacy Policy AND Website Design and Developed By <b style = "font-style:oblique;font-weight:bolder;">Suraj Nikam</b></p>
     </div>
 
@@ -466,7 +1789,36 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js'></script>
+    
+    <script type="text/javascript">
+        function viewproduct(){
+            window.location.href = "./ViewProduct";
+        }
+        function addtocartproduct(){
+            window.location.href = "./AddToCart";
+        }
+ 		function addwishlist(){
+            window.location.href = "./AddWishList";
+        }
+    </script>
+    
+	<script>
+		new Swiper('.swiper-container', {
+		  // Optional parameters
+		  loop: true,
+		  centeredSlides: true,
+		  slidesPerView: 'auto',
+		  initialSlide: 3,
+		  slideToClickedSlide: true,
+
+		  // Navigation arrows
+		   navigation: {
+		     nextEl: '.swiper-button-next',
+		     prevEl: '.swiper-button-prev',
+		   },
+		});
+	
         function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
@@ -506,5 +1858,6 @@
 
         
         </script>
+       
 </body>
 </html>

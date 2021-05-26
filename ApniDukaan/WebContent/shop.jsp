@@ -25,7 +25,12 @@
 }
 </style>
 <body >
-    
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%>     
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
@@ -43,11 +48,11 @@
                         <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     <div class="col-md-12 pt-2">
-                        <form action="#" ui-widget method="GET" >
+                        <form action="MyProductSearch" method="GET" >
                             <div class="input-group">
-                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search My Products..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text search-box-post"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></span>
+                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
                                 </div>
                               </div>
                         </form>
@@ -126,8 +131,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;font-weight: bolder;">delete</i></button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;font-weight: bolder;">drive_file_rename_outline</i></button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -140,8 +145,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -159,8 +164,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -173,8 +178,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -191,8 +196,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -205,8 +210,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -223,8 +228,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -237,8 +242,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -255,8 +260,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -269,8 +274,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -288,8 +293,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -302,8 +307,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -320,8 +325,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -334,8 +339,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -352,8 +357,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -366,8 +371,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -384,8 +389,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>
@@ -398,8 +403,8 @@
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                             </div>
                         </div>
                     </div>

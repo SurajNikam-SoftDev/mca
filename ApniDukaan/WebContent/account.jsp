@@ -19,8 +19,19 @@
     
     
 </head>
+<style>
+ul li{
+	height:50px;
+	font-size:small;
+}
+</style>
 <body >
-    
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%>    
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
@@ -62,153 +73,56 @@
         </div>
     </header>
     
-    <div class="container pt-2" >
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='ShopSettings'" style = "text-decoration: none;color:black;" >
-                        
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Shop Settings</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='ShoppingCharges'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Shopping Charges</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='HowToSell'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>How &nbsp; To &nbsp; Sell</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='GrowYourBusiness'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Grow Your Business</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='PurchaseOrder'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Purchase Order</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='MyPayment'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>My Payment</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-            </div>  
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='WishList'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>WishList</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='BankDetail'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Bank Detail</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>My Address</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='HelpFAQ'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Help&FAQ</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='ContactUs'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Contact Us</b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <a href="javascript:void(0)" onclick="location.href='Setting'" style = "text-decoration: none;color:black;">
-                        <div class = "card product-card" >
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-center"><b>Setting </b></p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-            </div>               
-        </div>
-    </div>  
     
-    
-
+    <div class="account-container mt-2">
+		<ul class="list-group">
+			<a href="javascript:void(0)"
+				onclick="location.href='ShopSettings'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Shop Settings</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='ShoppingCharges'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Shopping Charges</li></a>
+			<a href="javascript:void(0)" onclick="location.href='HowToSell'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">How To Sell</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='GrowYourBusiness'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Grow Your Business</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='PurchaseOrder'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Purchase Order</li></a>
+			<a href="javascript:void(0)" onclick="location.href='MyPayment'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">My Payment</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='WishList'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">WishList</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='BankDetail'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Bank Detail</li></a>
+			<a href="javascript:void(0)" onclick="location.href='MyAddress'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">My Address</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='HelpFAQ'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Help & FAQ</li></a>
+			<a href="javascript:void(0)"
+				onclick="location.href='ContactUs'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Contact Us</li></a>
+			<a href="javascript:void(0)" onclick="location.href='Setting'"
+				style="color: black; text-decoration: none;"><li
+				class="list-group-item">Setting</li></a>
+		</ul>
+	</div>
+		
     <br>
     <div class="container " >
         <p>Copyright @ 2021 All Rights Reserved. Terms of Use | Privacy Policy AND Website Design and Developed By <b style = "font-style:oblique;font-weight:bolder;">Suraj Nikam</b></p>

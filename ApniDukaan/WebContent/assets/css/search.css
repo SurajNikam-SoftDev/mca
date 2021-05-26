@@ -62,11 +62,13 @@ a {
 .page .swiper-slide {
   width: 265px;
   
-  // @media (min-width: 768px) {
-    // width: 300px;
-  // }
+  
 }
 
+@media (min-width: 640px) {
+	 width: 150px;
+}
+  
 .page .swiper-container {
   padding-bottom: 1rem;
   z-index: 0;

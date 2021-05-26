@@ -23,6 +23,12 @@
     
 </head>
 <body >
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%> 
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
@@ -40,11 +46,11 @@
                         <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     <div class="col-md-12 pt-2">
-                        <form action="#" ui-widget method="GET" >
+                        <form action="ShopProductSearch" method="GET" >
                             <div class="input-group">
-                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search In Shop Name..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <span class="input-group-text search-box-post"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></span>
+                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
                                 </div>
                               </div>
                         </form>

@@ -23,8 +23,7 @@
 <style>
 
 </style>
-<body>
-	
+<body>	
 	<div class="container">
 			<div class="row">
 				<div class="col-md-8 offset-md-2 mt-5 fancy-forms">

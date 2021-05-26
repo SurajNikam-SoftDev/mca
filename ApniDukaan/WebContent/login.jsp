@@ -20,11 +20,7 @@
     <!-- jquery-ui CSS -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
-<style>
-
-</style>
-<body>
-	
+<body>	
 	<div class="container">
 			<div class = "login-container">
 			<div class = "login-header text-center">

@@ -31,7 +31,12 @@
 
 </style>
 <body >
-
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%> 
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">

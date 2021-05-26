@@ -25,10 +25,9 @@
 
 </style>
 <body>
-
-	<div class="container">
+	<div class="container ">
 		
-		<div class = "signup-container">
+		<div class = "signup-container ">
 			<div class = "signup-header text-center">
 				<h6>ApniDukaan</h6>
 			</div>
@@ -90,7 +89,7 @@
 					<hr>
 					<div class="text-center">
 						<a href="javascript:void(0)" onclick="location.href='LogIn'"
-							style="color: black; text-decoration: none;">Login Here</a>
+							style="font-weight:bolder;color: black; text-decoration: none;">Click Here For Login Here</a>
 					</div>
 				</form>
 

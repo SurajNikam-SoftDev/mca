@@ -22,7 +22,12 @@
     
 </head>
 <body >
-
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%> 
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
@@ -62,9 +67,9 @@
     
     <div class="setting-container">
     	<ul class="list-group">
-		  <a href="javascript:void(0)" onclick="location.href='./PrivacyAndPolicy'"  style = "color:black;text-decoration: none;"><li class="list-group-item">1. Privacy And Policy</li></a>
-		  <a href="javascript:void(0)" onclick="location.href='./TermsAndCondition'"  style = "color:black;text-decoration: none;"><li class="list-group-item">2. Terms And Conditions</li></a>
-		  <a href="javascript:void(0)" onclick="location.href='./LogOut'"  style = "color:black;text-decoration: none;"><li class="list-group-item">3. Logout</li></a>
+		  <a href="javascript:void(0)" onclick="location.href='./PrivacyAndPolicy'"  style = "color:black;text-decoration: none;"><li class="list-group-item">Privacy And Policy</li></a>
+		  <a href="javascript:void(0)" onclick="location.href='./TermsAndCondition'"  style = "color:black;text-decoration: none;"><li class="list-group-item">Terms And Conditions</li></a>
+		  <a href="javascript:void(0)" onclick="location.href='./LogOut'"  style = "color:black;text-decoration: none;"><li class="list-group-item">Logout</li></a>
 		</ul>
 	</div>
     

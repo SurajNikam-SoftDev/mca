@@ -22,12 +22,33 @@
     
 </head>
 <style>
-    .btn{
-        border-radius: 0px;
-    }
+    
+.card{
+	border-radius: 18px;
+}
+
+.deletebutton{
+	border-radius: 0px 0px 0px 18px;
+}
+
+.editbutton{
+	border-radius: 0px 0px 18px 0px;
+} 
+
+.card-header{
+	padding:15px 0px;
+	font-size:medium;
+	font-weight:bolder;
+}
+    
 </style>
 <body >
-
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%> 
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
@@ -73,9 +94,9 @@
 
     <div class="container-fluid pt-3">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
+            <div class="col-md-4 pt-3">
+                <div class="card ">
+                    <div class="card-header text-center">
                         Address 1
                     </div>
                     <div class="card-body">
@@ -86,14 +107,14 @@
                         </address>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger" onclick="deleteaddress()">Delete</button>
-                        <button type="button" class="btn btn-success" onclick="editaddress()">Edit</button>
+                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
-                </div>  
+                </div>   
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 pt-3">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                         Address 2
                     </div>
                     <div class="card-body">
@@ -104,14 +125,14 @@
                         </address>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger" onclick="deleteaddress()">Delete</button>
-                        <button type="button" class="btn btn-success" onclick="editaddress()">Edit</button>
+                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
                 </div>  
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 pt-3">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                         Address 3
                     </div>
                     <div class="card-body">
@@ -122,8 +143,8 @@
                         </address>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger" onclick="deleteaddress()">Delete</button>
-                        <button type="button" class="btn btn-success" onclick="editaddress()">Edit</button>
+                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
                 </div>  
             </div>
