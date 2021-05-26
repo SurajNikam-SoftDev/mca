@@ -58,7 +58,7 @@
             <!--container-->
         </div>
 
-        <div id="demo" class="carousel slide" data-ride="carousel" >
+        <div id="demo" class="carousel slide" data-ride="carousel" style="z-index:0;">
             <ul class="carousel-indicators" >
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
@@ -113,266 +113,298 @@
         </div>
     </header>
     
-    <div class="container pt-2" >
+    <div class="container-fluid pt-2" style = "padding:25px;">
         <div class="row">
-            <div class="col-md-6">
+        	<div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger" onclick="deleteproduct()">Delete</button>
-                                <button type="button" class="btn btn-success" onclick="editproduct()">Edit</button>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;font-weight: bolder;">delete</i></button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;font-weight: bolder;">drive_file_rename_outline</i></button>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>      
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <div class = "card product-card" style="background-color: white;">
-                                <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    
-                                    <p class="card-text text-left"><b>Product Title </b></p>
-                                    <p class="card-text text-right inr-price">Rs. 650.00</p>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                
-                                <p class="card-text text-left"><b>Product Title </b></p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                
-                                <p class="card-text text-left"><b>Product Title </b></p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+        	<div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/6.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                
-                                <p class="card-text text-left"><b>Product Title </b></p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                
-                                <p class="card-text text-left"><b>Product Title </b></p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>  
-            <div class="col-md-6">
+                    
+                </div>      
+            </div>
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    
-                                    <p class="card-text text-left"><b>Product Title </b></p>
-                                    <p class="card-text text-right inr-price">Rs. 650.00</p>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                </div>
                         </div>
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/6.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 
                                 <p class="card-text text-left"><b>Product Title </b></p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>                       
+                </div>      
+            </div>
+        	<div class="col-md-4">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+			<div class="col-md-4">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example" >
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                
+                                <p class="card-text text-left"><b>Product Title </b></p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger" style = "border-radius:0px 0px 0px 18px;" onclick="deleteproduct()">Delete</button>
+                                <button type="button" class="btn btn-success" style = "border-radius:0px 0px 18px 0px;" onclick="editproduct()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </div>
         </div>
     </div> 
 
@@ -426,11 +458,11 @@
     
     <script type="text/javascript">
         function editproduct(){
-            window.location.href = "editproduct.jsp";
+            window.location.href = "EditProduct";
         }
         function deleteproduct(){
             alert("delete product");
-            window.location.href = "shop.jsp";
+            window.location.href = "Shop";
         }
     </script>
     

@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/strip.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
     <!-- <link rel="stylesheet" href="assets/css/products.css"> -->
-
-
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
     <!-- jquery-ui CSS -->
     
@@ -27,7 +25,8 @@
 <style> 
 /* .wrapper { margin: 150px auto; } */
 
-h1 { text-align: center; }
+
+
 </style>
 <body >
     
@@ -63,7 +62,7 @@ h1 { text-align: center; }
             <!--container-->
         </div>
 
-        <div id="demo" class="carousel slide" data-ride="carousel" >
+        <div id="demo" class="carousel slide" data-ride="carousel" style="z-index:0;">
             <ul class="carousel-indicators" >
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
@@ -110,58 +109,1638 @@ h1 { text-align: center; }
     </header>
 
    	 <!-- Wrapper -->
-    <div class="wrapper noselect">
-            <h1>Strip Carousel Template</h1>
-            <!-- Strip Carousel (Most Viewed) -->
-            <span><a href="#">Most Viewed</a></span>
-            <div class="strip-carousel" id="mostviewed">
-              <div class="arrow-left">&lsaquo;</div>
-              <div class="arrow-right">&rsaquo;</div>
-      
-              <div class="frames">
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-      
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-      
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-              </div>
-            </div>
-      
-            <!-- Strip Carousel (Top Ten) -->
-            <span><a href="#">Top Ten</a></span>
-            <div class="strip-carousel" id="topten">
-              <div class="arrow-left">&lsaquo;</div>
-              <div class="arrow-right">&rsaquo;</div>
-      
-              <div class="frames">
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-      
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-                <a href="#"><div class="frame"></div></a>
-              </div>
-            </div>
-      
-          </div>
-         
+    <div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Top Offers</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
 
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Categories Fashion</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+		</div>
+
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Categories Electronics </b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Categories Home Appliances</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+		</div>
+	
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Categories Grocery</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Categories Mobile's</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+		</div>
+	
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Toys, & Beauty</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Men's Footwear</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+		</div>
+	
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Baby and Kids</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+	</div>
+
+	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
+		  <!-- Slider main container -->
+		  <div class="cards-slider" style = "padding:20px 0px">
+		  	<div class = "text-left" style = "padding:0px 0px 0px 35px;font-size:16px;font-weight:bolder;">
+		  		<b>Health Care Essentials</b>
+		  	</div>
+		  	
+		    <div class="swiper-container">
+		      <!-- Additional required wrapper -->
+		      <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide">
+		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		        <div class="swiper-slide">
+		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
+	                  	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
+	                    <div class="card-body">
+	                    	<p class="card-text text-left"><b>Product Title </b></p>
+	                        <p class="card-text text-right inr-price">Rs. 650.00</p>
+	                    </div>
+	                    <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
+	                    <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+	                        <p class="card-text text-center">Buy Now</p>
+	                    </div>
+	                    </a>
+                	</div>
+		        </div>
+		      </div>
+		
+		      <!-- If we need pagination -->
+		      <div class="swiper-pagination"></div> 
+		
+		      <!-- If we need navigation buttons -->
+		      <div class="swiper-button-prev" style = "color:gray;"></div>
+		      <div class="swiper-button-next" style = "color:gray;"></div>
+		    </div>
+		  </div>
+		</div>
+	
+	
+	
     <div class="container mt-4" >
         <p>Copyright @ 2021 All Rights Reserved. Terms of Use | Privacy Policy AND Website Design and Developed By <b style = "font-style:oblique;font-weight:bolder;">Suraj Nikam</b></p>
     </div>
@@ -201,8 +1780,24 @@ h1 { text-align: center; }
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="assets/js/strip.js"></script>
-    <script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js'></script>
+    
+	<script>
+		new Swiper('.swiper-container', {
+		  // Optional parameters
+		  loop: true,
+		  centeredSlides: true,
+		  slidesPerView: 'auto',
+		  initialSlide: 3,
+		  slideToClickedSlide: true,
+
+		  // Navigation arrows
+		   navigation: {
+		     nextEl: '.swiper-button-next',
+		     prevEl: '.swiper-button-prev',
+		   },
+		});
+	
         function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
@@ -242,33 +1837,6 @@ h1 { text-align: center; }
 
         
         </script>
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36251023-1']);
-      _gaq.push(['_setDomainName', 'jqueryscript.net']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-    </script>
-    <script>
-    try {
-      fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-        return true;
-      }).catch(function(e) {
-        var carbonScript = document.createElement("script");
-        carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-        carbonScript.id = "_carbonads_js";
-        document.getElementById("carbon-block").appendChild(carbonScript);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-    </script>
+       
 </body>
 </html>

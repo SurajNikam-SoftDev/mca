@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+body{
+    
+    font-family: 'Comfortaa', cursive;
+    font-weight: 500;
+    font-size:11px;
+    overflow-x: hidden;
+    background-color: #F7F7F7;
+}
+
+.fancy-forms .tab-content{
+    background: #ffffff;
+    color: black;
+    padding: 10px;
+    box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.3);
+    border-radius: 0px 0px 18px 18px; 
+    
+}
+
+.fancy-forms .nav-tabs .nav-item{
+    width: 50%;
+    text-align: center;
+    
+}
+
+.webtitle{
+	padding:15px 0px;
+	border-radius: 18px 18px 0px 0px;
+	background-color:#002060;
+    color:white;
+    font-size:large;
+    font-weight:bolder;
+}
+
+
+.fancy-forms .nav-tabs .nav-link{
+	background-color: #F7F7F7;
+    color: #002060;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+    border:none;
+    border-radius:0px;
+    font-size:medium; 
+}
+
+.fancy-forms .nav-tabs .nav-link.active{
+    font-size:medium;
+    color: #fff;
+    background-color: #002060;
+    font-weight:bolder;
+    border:none;
+    
+}
+
+ .fancy-forms .nav-tabs .nav-link:hover{
+    border-color: #fff;
+ }
+
+ fancy-forms .nav-tabs .nav-link.active:hover{
+    border-color: #e47a4b;
+ }
+
+ .fancyformcontainer{
+    /* background: #002060;*/
+    padding:10px;
+    font-size:11px;
+    /*margin: 3rem !important; */
+    border:2px solid white;
+ }
+
+input[type=text]{
+    font-size: 10px;    
+}
+ 
+ .formsubmitbtn{
+    background: #002060;
+    color: white; 
+    font-size:12px;
+    font-weight:bolder;
+    /* margin-bottom: 1.5rem !important; */
+ }
+
+ .formsubmitbtn:hover,.formsubmitbtn:focus{
+    color: #fff;
+ }

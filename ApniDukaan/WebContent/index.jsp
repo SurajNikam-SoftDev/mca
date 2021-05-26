@@ -19,14 +19,22 @@
     
     
 </head>
-<body >
-    
+<body >  
+<%
+	if(session.getAttribute("emailid")==null)
+	{
+		response.sendRedirect("./LogIn");
+	}	
+%>
     <header> 
         <div class="header">
             <div class="container" style = "padding:0px">
                 <div class="row">
                     <div class="col-sm-12 webtitle text-center">
                         <a href="javascript:void(0)" onclick="location.href='Home'"  style = "color:white;text-decoration: none;">ApniDukaan</a>
+                    </div>
+                    <div class="col-sm-12 text-right mt-2">
+                        <b>Welcome, <b style = "font-size:small;"><%=  session.getAttribute("emailid") %></b></b>
                     </div>
                     <div class="col text-left pt-1">
                         <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
@@ -53,7 +61,7 @@
             <!--container-->
         </div>
 
-        <div id="demo" class="carousel slide" data-ride="carousel" >
+        <div id="demo" class="carousel slide" data-ride="carousel" style="z-index:0;" >
             <ul class="carousel-indicators" >
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
@@ -99,34 +107,35 @@
         
     </header>
     
-    <div class="container pt-2" >
+    <div class="container-fluid pt-2" style = "padding:25px" >
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
                             
                             <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
-                            <div class="card-footer">
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -134,31 +143,33 @@
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -166,31 +177,33 @@
                     </div>
                 </div>      
             </div>  
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -198,31 +211,33 @@
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -230,31 +245,33 @@
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -262,63 +279,33 @@
                     </div>
                 </div>      
             </div>  
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>      
-            </div> 
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
-                                <p class="card-text text-center">Buy Now</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -326,31 +313,33 @@
                     </div>
                 </div>      
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
                         </div>
                     </div>
                     <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                            <div class="card-body">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
                                 <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
                                 <p class="card-text text-right inr-price">Rs. 650.00</p>
                             </div>
-                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">    
-                            <div class="card-footer">
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
                                 <p class="card-text text-center">Buy Now</p>
                             </div>
                             </a>
@@ -358,7 +347,78 @@
                     </div>
                 </div>      
             </div>
-                                
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>      
+            </div>  
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col" style="padding:5px;">
+                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
+                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+                            <div class="card-body" style = "border-radius:18px;">
+                                <p class="card-text text-left"><b>Product Title </b> <br/> Some quick example text to build on the card title</p>
+                                <p class="card-text text-right inr-price">Rs. 650.00</p>
+                            </div>
+                            
+                            <a href="javascript:void(0)" onclick="location.href='ViewProduct'" style = "text-decoration: none;">  
+                            <div class="card-footer" style = "border-radius:0px 0px 18px 18px;">
+                                <p class="card-text text-center">Buy Now</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>      
+            </div>
+            
+            
+            
+                  
         </div>
     </div>  
     <br>    

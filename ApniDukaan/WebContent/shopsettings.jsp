@@ -61,39 +61,35 @@
         <div class = "form-header pt-3">
             <h5>Shop Settings</h5>
         </div>
-        <form class = "form-body">
+        <form class = "form-body" action = "./ShopSettings" method = "POST">
             <div class="form-group">
                 <label for="inputAddress">Shop Name</label>
                 <input type="text" class="form-control" name="shopname" placeholder="Shop Name">
             </div>
             <div class="form-group">
-                <label for="inputAddress">Your Website Link</label>
-                <input type="text" class="form-control" name="yourwebsitelink" placeholder="Your Website Link">
+                <label for="inputAddress">Your Name</label>
+                <input type="text" class="form-control" name="ownername" placeholder="Your Name">
+            </div>
+            <div class="form-row">
+            	<div class="form-group col-md-6">
+                    <label for="prepaidorderdiscount">Contact Number</label>
+                    <input type="text" class="form-control" name="shopcontact" placeholder="Contact Number">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="prepaidorderdiscount">Prepaid Order Discount</label>
+                    <input type="text" class="form-control" name="prepaiddiscount" placeholder="Prepaid Order Discount">
+                </div>
             </div>
             <div class="form-group">
                 <label for="about">About</label>
                 <br>
-                <textarea style="width: 100%;font-size:12px;" class = "form-control" placeholder="Describe yourself here..."></textarea>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="prepaidorderdiscount">Prepaid Order Discount</label>
-                    <input type="text" class="form-control" name="prepaidorderdiscount" placeholder="Prepaid Order Discount">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="courierpreference">Manage Courier Preference</label>
-                    <select name="courierpreference" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose Courier Preference...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    </select>
-                </div>
+                <textarea style="width: 100%;font-size:12px;" class = "form-control" placeholder="Describe yourself here..." name = "about"></textarea>
             </div>            
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+                <input type="submit" class="btn btn-primary form-control"  style = "font-size: 12px;font-weight: bolder;" value = "Submit"/>
+                
+               
             </div>
             
             <!-- Modal -->

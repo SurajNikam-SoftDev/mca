@@ -154,10 +154,6 @@
                 <div class="col-md-12" >
 				  <div class="form-group">
                         <label for="upload">Upload Images</label>
-                  </div>
-				</div>
-                <div class="col-md-12" >
-				  <div class="form-group">
                         <div id="drag-drop-area"></div>
                   </div>
 				</div>
