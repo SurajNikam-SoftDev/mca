@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,105 +68,48 @@
     
     <div class="growyourbusiness-container mt-2">
         <div class = "description">
-            <h6 class="text-center">For Buyers</h6>
-            <b class = "question">1. How to contact the seller?  </b>
-            <p class = "answer">
-                To contact your seller, click on the chat button in your seller's profile and start chatting. 
-            </p>
-            
-            <b class = "question">2. When will the order be dispatched? </b>
-            <p class = "answer">
-                Your order will be usually dispatched within 1 day after your seller has accepted your order. Chat with your seller to ask doubts regarding your order.
-            </p>
-            
-            <b class = "question">3. How can I track my order? </b>
-            <p class = "answer">
-                Go to the 'Orders' tab, click on 'My Purchases' button on the top, select your order and click on 'Track' button to track your order.
-            </p>
-                        
-            <b class = "question">4. What is the process of returns? </b>
-            <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the PopShop app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
+<b class = "question">1. Recapture Existing Customers  </b>
+<p class = "answer">
+Getting new customers isn't the only way to grow your business. Many times, the customers you already have are your best bet for increasing your sales, and studies have found that improving customer retention also improves the value of a company.1﻿
+Customers who have already purchased from you once are more likely to do so again, especially if they have a positive customer service experience. Capture the contact information and shopping preferences of one-time customers. Then, use that information to set up marketing systems that will convert them into repeat customers.
+Implementing a mix of strategies to both retain old customers and acquire new ones is likely to produce the best growth for most businesses.2﻿
+</p>        
 
-                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use PopShop shipping, you will need to handle the shipping of the return yourself.    
-            </p>
+<b class = "question">2. Ask for Referrals  </b>
+<p class = "answer">
+ Of course, attracting new customers to your business is never a bad approach. One way to do that is to ask your current customers for referrals.
+These customers are already your target market, which means that people in their social or work circles are likely to be your target market as well. This makes them a strong access point to new customers.3﻿
+However, assuming that your customers are passing the word about your business isn’t going to increase your customer base. You have to actively seek referrals. Depending on the type and size of your business, you can:
+</p>
 
-            <b class = "question">5. Amount got debited from my bank account, payment is failed?</b>
-            <p class = "answer">
-                If your amount has been debited and payment status shows 'Failed', do not worry, your money is safe in the payment gateway which will be refunded to you within 5-8 working days.
+<b class = "question">3. Ask satisfied customers if they know anyone else who would be interested in your products or services.</b>
+<p class = "answer">
+Incentivize referrals with a discount code.
+Encourage customers to share and tag your brand on social media.4
+</p>
+ 
+﻿<b class = "question">4. Contain Your Costs</b>
+<p class = "answer">
+Increasing your bottom line is key to growing your business. If you expand your share of the market but continue to increase your costs, you won't actually have any money left to invest in your business or make a profit.
+So while you're looking for ways to grow, pay close attention to the costs associated with running your business and getting your products or services to customers. Lowering these costs can be an effective way to give your business the cash flow it needs to grow and stabilize. There are two main approaches to cutting costs:
+</p>
 
-                Please check your bank statement for a refund from 'NXTBillion'. If you are facing issues please email to us on help@popshop.in and attach a screenshot of your order.
-            </p>
-                        
-            <b class = "question">6. How to return a product and get a refund?</b>
-            <p class = "answer">
-                To return the product, go to the ‘Account’ tab, click on 'My Purchases', select your order and click on the return button. 
+<b class = "question">5. Liquidating low-earning products or eliminating low-performing services</b>
+<p class = "answer">
+Improving your inventory turnover through new marketing and sales tactics
+Be careful not to cut costs in a way that impacts your customer service or employee satisfaction. Happy customers and enthusiastic employees are both key drivers of business growth. Cutting costs in these areas will ultimately harm your business' ability to expand, even if they give you more cash flow in the short term.
+</p>
 
-                A pick up agent will come to your delivery address and pick up the product. Please make sure it is packed and labels are intact. Communicate about the product return to your seller. After the product is returned, your seller will check the product and refund the amount through your desired payment method.
+<b class = "question">6. Extend Your Market Reach</b>
+<p class = "answer">
+There are several ways of growing your business by making your product or service available to a new pool of customers.
 
-                If there is no return button on your order, this product might not be eligible for return. 
-            </p>    
-
-            <b class = "question">7. I have a problem with the PopShop seller, how to report it?</b>
-            <p class = "answer">
-                If you have a problem with your seller, please write a mail to us on help@popshop.in. Please mention what problem you are facing and also attach a full screenshot of your seller's profile with the mail. We will try our best to provide a resolution.
-            </p>  
-
-            <b class = "question">8. I want to block a person from irritating me.</b>
-            <p class = "answer">
-                If someone is sending you unnecessary messages and you would want to stop receiving messages from them on Popshop, go to the person's chat, click on the three dot button on the top right hand side corner and click on 'Block'.
-
-                After blocking, the person cannot view your posts or send you any messages.
-
-                If you wish to unblock the user, go to the ‘Account’ tab, go to settings, click on 'Blocked List' and select the person you want to unblock and click on the unblock button.
-            </p>  
-            
-            <hr>
-            <h6 class="text-center">For Sellers</h6>
-            <b class = "question">1. How to get orders?  </b>
-            <p class = "answer">
-                To get orders, just share your website or product link with your customers over WhatsApp, Facebook Marketplace, etc. They can order your product directly through the website, or even from the PopShop app. 
-            </p>
-            
-            <b class = "question">2. How is my payment calculated? </b>
-            <p class = "answer">
-                Your payment = Selling Price - PopShop Delivery Fee. <br>
-                The delivery fee for your order is calculated based upon the PopShop Shipping Rate Card. To check the rate card, please go to ‘Account’ tab in the app and click ‘PopShop Shipping Charges’.
-            </p>
-            
-            <b class = "question">3. When do I get the payment? </b>
-            <p class = "answer">
-                For prepaid orders, you get payment within 2-3 working days from the date of dispatch.
-
-                For Cash on Delivery orders, you get payment within 5-6 working days from the date of delivery. 
-
-                Don’t forget to add your bank account details in the app to receive the payments on time. Working days are Mon-Fri excluding bank holidays. 
-            </p>
-                        
-            <b class = "question">4. What is the process of returns? </b>
-            <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the PopShop app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
-
-                You should directly send the money to the customer after you receive the product back.  Note that if your product does not use PopShop shipping, you will need to handle the shipping of the return yourself.    
-            </p>
-
-            <b class = "question">5. What happens if an order is unserviceable for pick up?</b>
-            <p class = "answer">
-                In case of a product being unserviceable in ‘PopShop Shipping’ the system will automatically convert the order to ‘Self Shipping’. Order management and payment system will be changed to ‘Self Shipping’ mode
-            </p>
-                        
-            <b class = "question">6. How to pack and ship the product?</b>
-            <p class = "answer">
-                Packing and shipping the product are same as standard e-commerce practices. Standard policies with respect to restricted items also apply. 
-            </p>    
-
-            <b class = "question">7. Why is my product not yet picked up?</b>
-            <p class = "answer">
-                Pick up generally happens in 2-3 working days for the first few orders, after a few orders, your product will be picked up faster.
-            </p>  
-
+Open stores in new locations: New locations can also be virtual, such as a website with an online store. This allows you to put your product in front of new customers in a new market.
+Target a new demographic: Identify other groups who could also use your product in similar ways to your initial target audience. Once you’ve identified a new market, you can advertise in media that targets that market or create custom marketing campaigns.
+Encourage new uses for your product: Discovering and promoting new ways to use your products or services allows you to encourage existing customers to buy more. It can also help you attract new customers who might need your products for different reasons.
+All of these approaches allow you to expand your share of the market. This not only increases sales, but it also makes your business model more stable. When you don't rely on just one type of target customer, you are more likely to survive changes to the market.
+</p>
         </div>
-        
     </div>
     
 

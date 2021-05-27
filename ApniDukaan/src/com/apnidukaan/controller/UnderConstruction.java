@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class WishList
+ * Servlet implementation class UnderConstruction
  */
-@WebServlet("/WishList")
-public class WishList extends HttpServlet {
+@WebServlet("/UnderConstruction")
+public class UnderConstruction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public WishList() {
+    public UnderConstruction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,9 +28,7 @@ public class WishList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("wishlist.jsp").forward(request, response);
-		
-		
+		request.getRequestDispatcher("underconstruction.jsp").forward(request, response);
 	}
 
 	/**

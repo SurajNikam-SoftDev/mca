@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +76,7 @@
                             
                 For cash-on-delivery orders where ApniDukaan collects the cash, payment to your bank account is done within 5 working days after the date of product delivery.
 
-                You can add your bank details from the ‘My Account’ section of the app. 
+                You can add your bank details from the âMy Accountâ section of the app. 
             </p>
             
             <b class = "question">2. How is my payout calculated for an order?</b>

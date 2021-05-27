@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +92,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -105,7 +107,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -124,7 +126,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -139,7 +141,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -158,7 +160,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -173,7 +175,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -192,7 +194,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -207,7 +209,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -226,7 +228,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -241,7 +243,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -260,7 +262,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -275,7 +277,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -294,7 +296,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -309,7 +311,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -328,7 +330,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -343,7 +345,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -362,7 +364,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>
@@ -377,7 +379,7 @@
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example" >
                                 <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Remove From Cart" style = "border-radius:0px 0px 0px 18px;" onclick="removefromcart()"><i class="material-icons nav__icon pt-2" style ="color:white;">remove_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
+                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
                                 <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
                             </div>
                         </div>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +87,7 @@
                         
             <b class = "question">4. What is the process of returns? </b>
             <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
+                If you have turned on âReturnsâ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click âAcceptâ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
 
                 You should directly send the money to the customer after you receive the product back.  Note that if your product does not use ApniDukaan shipping, you will need to handle the shipping of the return yourself.    
             </p>
@@ -99,7 +101,7 @@
                         
             <b class = "question">6. How to return a product and get a refund?</b>
             <p class = "answer">
-                To return the product, go to the ‘Account’ tab, click on 'My Purchases', select your order and click on the return button. 
+                To return the product, go to the âAccountâ tab, click on 'My Purchases', select your order and click on the return button. 
 
                 A pick up agent will come to your delivery address and pick up the product. Please make sure it is packed and labels are intact. Communicate about the product return to your seller. After the product is returned, your seller will check the product and refund the amount through your desired payment method.
 
@@ -117,7 +119,7 @@
 
                 After blocking, the person cannot view your posts or send you any messages.
 
-                If you wish to unblock the user, go to the ‘Account’ tab, go to settings, click on 'Blocked List' and select the person you want to unblock and click on the unblock button.
+                If you wish to unblock the user, go to the âAccountâ tab, go to settings, click on 'Blocked List' and select the person you want to unblock and click on the unblock button.
             </p>  
             
             <hr>
@@ -130,7 +132,7 @@
             <b class = "question">2. How is my payment calculated? </b>
             <p class = "answer">
                 Your payment = Selling Price - ApniDukaan Delivery Fee. <br>
-                The delivery fee for your order is calculated based upon the ApniDukaan Shipping Rate Card. To check the rate card, please go to ‘Account’ tab in the app and click ‘ApniDukaan Shipping Charges’.
+                The delivery fee for your order is calculated based upon the ApniDukaan Shipping Rate Card. To check the rate card, please go to âAccountâ tab in the app and click âApniDukaan Shipping Chargesâ.
             </p>
             
             <b class = "question">3. When do I get the payment? </b>
@@ -139,19 +141,19 @@
 
                 For Cash on Delivery orders, you get payment within 5-6 working days from the date of delivery. 
 
-                Don’t forget to add your bank account details in the app to receive the payments on time. Working days are Mon-Fri excluding bank holidays. 
+                Donât forget to add your bank account details in the app to receive the payments on time. Working days are Mon-Fri excluding bank holidays. 
             </p>
                         
             <b class = "question">4. What is the process of returns? </b>
             <p class = "answer">
-                If you have turned on ‘Returns’ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click ‘Accept’ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
+                If you have turned on âReturnsâ for your product, you will receive a notification when the customer requests for a return through the ApniDukaan app. Note that return will be approved only after you click âAcceptâ for the return on the app. If you accept, our delivery partner will pickup the product from the customer and deliver it back to you. 
 
                 You should directly send the money to the customer after you receive the product back.  Note that if your product does not use ApniDukaan shipping, you will need to handle the shipping of the return yourself.    
             </p>
 
             <b class = "question">5. What happens if an order is unserviceable for pick up?</b>
             <p class = "answer">
-                In case of a product being unserviceable in ‘ApniDukaan Shipping’ the system will automatically convert the order to ‘Self Shipping’. Order management and payment system will be changed to ‘Self Shipping’ mode
+                In case of a product being unserviceable in âApniDukaan Shippingâ the system will automatically convert the order to âSelf Shippingâ. Order management and payment system will be changed to âSelf Shippingâ mode
             </p>
                         
             <b class = "question">6. How to pack and ship the product?</b>

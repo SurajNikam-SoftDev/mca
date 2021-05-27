@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'>
+	<meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>ApniDukaan :: Login Form</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -49,7 +49,7 @@
 							onclick="location.href='ForgotPassword'"
 							style="font-weight:bolder;color: black; text-decoration: none;">Forgot Password?</a>
 					</div>
-					<div class="text-center">
+					<div class="text-center mt-2">
 						<button type="submit" class="btn formsubmitbtn form-control">Submit</button>
 					</div>
 					<hr>

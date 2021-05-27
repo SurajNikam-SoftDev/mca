@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,10 +107,12 @@
                             Box 564, Disneyland<br>
                             USA
                         </address>
+                        <input type = "radio" name ="defaultaddress"><b style = "font-size:smaller;padding-top:-5px;"> Set For Default Address</b>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
-                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
+                        <button type="button" class="btn btn-danger deletebutton"  data-toggle="tooltip" data-placement="top" title="Delete Address"  onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-warning defaultbutton"  data-toggle="tooltip" data-placement="top" title="Default Address" onclick="defaultaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">pin_drop</i></button>	
+                        <button type="button" class="btn btn-success editbutton"  data-toggle="tooltip" data-placement="top" title="Edit Address" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
                 </div>   
             </div>
@@ -123,10 +127,12 @@
                             Box 564, Disneyland<br>
                             USA
                         </address>
+                        <input type = "radio" name ="defaultaddress"><b style = "font-size:smaller;padding-top:-5px;"> Set For Default Address</b>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
-                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
+                        <button type="button" class="btn btn-danger deletebutton"  data-toggle="tooltip" data-placement="top" title="Delete Address"  onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-warning defaultbutton"  data-toggle="tooltip" data-placement="top" title="Default Address" onclick="defaultaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">pin_drop</i></button>	
+                        <button type="button" class="btn btn-success editbutton"  data-toggle="tooltip" data-placement="top" title="Edit Address" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
                 </div>  
             </div>
@@ -141,10 +147,12 @@
                             Box 564, Disneyland<br>
                             USA
                         </address>
+                        <input type = "radio" name ="defaultaddress"><b style = "font-size:smaller;padding-top:-5px;"> Set For Default Address</b>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-danger deletebutton" onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
-                        <button type="button" class="btn btn-success editbutton" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
+                        <button type="button" class="btn btn-danger deletebutton"  data-toggle="tooltip" data-placement="top" title="Delete Address"  onclick="deleteaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">delete</i></button>
+                        <button type="button" class="btn btn-warning defaultbutton"  data-toggle="tooltip" data-placement="top" title="Default Address" onclick="defaultaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">pin_drop</i></button>	
+                        <button type="button" class="btn btn-success editbutton"  data-toggle="tooltip" data-placement="top" title="Edit Address" onclick="editaddress()"><i class="material-icons nav__icon pt-2" style ="color:white;">draw</i></button>
                     </div>
                 </div>  
             </div>
