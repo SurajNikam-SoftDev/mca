@@ -23,7 +23,7 @@
 
     
 </head>
-<body >
+<body > 
 <%
 	if(session.getAttribute("emailid")==null)
 	{
