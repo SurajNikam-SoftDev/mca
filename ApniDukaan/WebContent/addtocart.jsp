@@ -23,6 +23,15 @@
 
     
 </head>
+<style>
+.btn{
+	z-index: 0;
+}
+
+footer{
+	z-index: 1;
+}
+</style>
 <body >
 <%
 	if(session.getAttribute("emailid")==null)
