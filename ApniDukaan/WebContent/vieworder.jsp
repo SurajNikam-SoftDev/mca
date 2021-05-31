@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/vieworder.css">
@@ -22,7 +24,58 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
 </head>
+<style>
+.trackorder-container{
+	background-color: white;
+    margin-top:10px 0px 0px 0px;
+    padding-top:10px;
+}
 
+.paragraph{
+	font-weight:bolder;
+	border:1px solid grey;
+	color:black;
+	padding:15px 15px;
+	border-radius:15px;
+	font-size:11px;
+	margin-top:-7px;
+}
+
+.trackorder-icon{
+	font-weight:bolder;
+	background-color:#007bff;
+	color:white;
+	padding:8px;
+	border-radius:50%;
+	
+}
+
+.paragraph small{
+	float:right;
+	color:grey;
+	font-size:x-small;
+}
+
+.trackorder-text{
+	padding-left:5px; 
+}
+
+.vertical{
+	margin-top:-17px;	
+}
+
+.vertical-line{
+	border-left: 4px solid grey;
+  	height: 50px;
+  	display:inline-block;
+}
+
+.vertical-line-process{
+	border-left: 4px dashed grey;
+  	height: 70px;
+  	display:inline-block;
+}
+</style>
 <body >
 <%
 	if(session.getAttribute("emailid")==null)
@@ -204,48 +257,87 @@
         4800mAH lithium-ion battery, 1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase
       </p>
     </div>
+	
+	<div class = "container-fluid trackorder-container  mt-2">
+		<b style = "padding:10px;font-size:14px;font-weight:bolder">Track Order</b><br><br><br>
+           		<div class="row justify-content-center">
+				    <div class="col-10">
+				    	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Item accepted by Courier</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Collected</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Shipped</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">In-Transit</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line" style = "height:100px;"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Arrived At Destination</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Out For Delivery</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Ready To PickUp</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Delivered</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line"></span>
+		            	</div>
+		            	<p class="paragraph">
+		   
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">PickUp</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+		            	<div class = "vertical text-center">
+		            		<span class = "vertical-line-process"></span>
+		            	</div>
+		            	<p class="paragraph">
+		            			<i class="bx bx-search trackorder-icon"></i>
+		            			<b class = "trackorder-text">Unsuccessfully Delivery Arrived</b><small>Nov 27, 2020 02:06 PM</small> 
+		            	</p>
+				    </div>
+				</div>
+				<br>
+           	</div>
+           	
+    
 
-    <div class="tracking-section">
-      <div class = "text-center">
-        <b style = "font-size: 13px;font-weight: bolder;">Customer Tracking Order</b>
-      </div>
-      <div style = "padding:25px 0px 0px 40px;" class = "innerdiv">
-          <ul>
-              <li style = "margin-top:0px;">
-                  <span class = "circle"></span>
-                  <div class = "title">Codify</div>
-                  <div class = "info">Creating Awesome Css Design</div>
-                  <div class = "type">Presentation</div>
-                  <div class = "time">
-                      <span>9:00 AM</span>
-                      <span>10:00 AM</span>
-                  </div>
-              </li>
-              <li>
-                  <span class = "circle"></span>
-                  <div class = "title">Codify</div>
-                  <div class = "info">Creating Awesome Css Design</div>
-                  <div class = "type">Presentation</div>
-                  <div class = "time">
-                      <span>9:00 AM</span>
-                      <span>10:00 AM</span>
-                  </div>
-              </li>
-              <li>
-                  <span class = "circle"></span>
-                  <div class = "title">Codify</div>
-                  <div class = "info">Creating Awesome Css Design</div>
-                  <div class = "type">Presentation</div>
-                  <div class = "time">
-                      <span>9:00 AM</span>
-                      <span>10:00 AM</span>
-                  </div>
-              </li>
-          </ul>
-      </div>     
-    </div>
-
-    <!-- <div class="orderdetails-section">
+     <div class="orderdetails-section">
         <p>Your Order
         <br />    
         <b style = "font-size: 13px;">Order ID : 1646156-16545526-1641546</b>
@@ -260,7 +352,7 @@
                 <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <div class="address-section">
         <div class = "address-bar">
