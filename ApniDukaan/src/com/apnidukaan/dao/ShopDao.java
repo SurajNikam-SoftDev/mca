@@ -18,6 +18,9 @@ public class ShopDao {
 			 
 			 Connection con = DBConnection.getConnection();
 //			 System.out.println("insert into shop(shopname, ownername, shopphoto, shopcontact, prepaiddiscount, about) values('"+sb.getShopname()+"','"+sb.getOwnername()+"','"+sb.getPhoto()+"','"+sb.getShopcontact()+"','"+sb.getPrepaiddiscount()+"','"+sb.getAbout()+"')");
+			 
+			 
+			 
 			 PreparedStatement ps = con.prepareStatement("insert into shop(shopname, ownername, shopphoto, shopcontact, prepaiddiscount, about) values(?,?,?,?,?,?)");
 			 ps.setString(1, sb.getShopname());
 			 ps.setString(2, sb.getOwnername());
@@ -39,7 +42,4 @@ public class ShopDao {
 		
 		
 	}
-	
-	
-
 }
