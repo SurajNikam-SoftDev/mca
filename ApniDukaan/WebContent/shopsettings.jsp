@@ -21,7 +21,52 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    
+    <script type = "text/javascript">
+    	function validation(){
+    		/*
+    		var contactno = document.getElementById("contactno").value;
+    		var emailid = document.getElementById("emailid").value;
+    		var zipcode = document.getElementById("zipcode").value;
+    		var name = document.getElementById("name").value;
+			*/
+    		alert();
+    		var contactexp = /^\d{10}$/;
+			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var zipexp = /^\d{6}$/;
+			var letterexp = /^[A-Za-z]+$/;	//	single word
+            var letterspaceexp = /^[a-zA-Z\s]*$/g;	//	multiple words
+			
+			alert(document.form.ownername.value);
+            if(document.form.ownername.value == '') 
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Your Name";  
+    			return false;
+    		}
+            else if(!document.form.ownername.value.match(letterexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Characters Only";  
+    			return false;
+    		}
+            else if(document.form.contactno.value == '')
+    		{
+    			document.getElementById("errorspan").innerHTML = "Select Contact Number";  
+    			return false;
+    		} 
+    		else if(!document.form.contactno.value.match(contactexp))
+    		{
+    			document.getElementById("errorspan").innerHTML = "Enter Correct Contact Number";  
+    			return false; 
+    		}
+    		else
+    		{
+    			document.getElementById("errorspan").innerHTML = "";
+    			return false;
+    		}
+            
+            return false
+
+    	} 
+    </script>
 </head>
 <body >
 <%
@@ -67,20 +112,20 @@
     <div class="container form-container">
         <div class = "form-header pt-3">
             <h5>Shop Settings</h5>
-        </div>
-        <form class = "form-body" action = "./ShopSettings" method = "POST">
+        </div> <!-- action = "./ShopSettings"  method = "POST" -->
+        <form class = "form-body" name = "form" >
             <div class="form-group">
                 <label for="inputAddress">Shop Name</label>
                 <input type="text" class="form-control" name="shopname" placeholder="Shop Name">
             </div>
             <div class="form-group">
-                <label for="inputAddress">Your Name</label>
+                <label for="inputAddress">Your Name<span style = "color:red;font-size:10px;font-weight:bolder;">*</span></label>
                 <input type="text" class="form-control" name="ownername" placeholder="Your Name">
             </div>
             <div class="form-row">
             	<div class="form-group col-md-6">
-                    <label for="prepaidorderdiscount">Contact Number</label>
-                    <input type="text" class="form-control" name="shopcontact" placeholder="Contact Number">
+                    <label for="prepaidorderdiscount">Contact Number<span style = "color:red;font-size:10px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" name="contactno" placeholder="Contact Number">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="prepaidorderdiscount">Prepaid Order Discount</label>
@@ -94,40 +139,16 @@
             </div>            
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <input type="submit" class="btn btn-primary form-control"  style = "font-size: 12px;font-weight: bolder;" value = "Submit"/>
+                <button type="submit" class="btn btn-primary form-control"  style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
                 
                
             </div>
             
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class = "modal-symbol">
-                            <img src="https://media.giphy.com/media/YlSR3n9yZrxfgVzagm/giphy.gif" class="modal-image" style = "height:100px; width: 100px;"> <!-- saved -->
-                            <!-- <img src="https://media.giphy.com/media/L2NX9o62VOsZqH8IPp/giphy.gif" class="modal-image">  delete -->
-                            <!-- <img src="https://media.giphy.com/media/hlvIX2f1zeLESr2DI4/giphy.gif" class="modal-image">  update -->  
-                        </div>
-                    Data Saved Successfully!!!
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-primary" onclick = "validation()">Okay</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-            
-            <br>
         </form>
-        
+        <div class = "text-center mt-3">
+			<b><span id = "errorspan" style = "font-size:x-small;font-weight:bolder;color:red"></span></b>
+		</div>
+		<br>
     </div>
     
 

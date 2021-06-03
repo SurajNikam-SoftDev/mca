@@ -25,7 +25,7 @@
 </head>
 <style>
 
-.trackorder-section{
+.tracking-section{
 	padding:25px;
 	margin-top:15px;
 	background-color: white;
@@ -213,14 +213,14 @@
 				</div>
              
         </div>
-
+        
         <div class="orderdetails-section">
             <p>Your Order
             <br />    
             <b style = "font-size: 13px;">Order ID : 1646156-16545526-1641546</b>
             </p> 
             <div class = "row orderdetails-bar">
-                <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
+                <div class = "col-3">
                     <img src = "assets/img/2.jpg" class = "orderdetails-img" alt="Product Img"/>
                 </div>
                 <div class = "col-9 orderdetails-header" >

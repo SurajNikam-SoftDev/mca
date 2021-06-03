@@ -72,6 +72,13 @@
 .visible {
 display: block;
 }
+
+.advt-image{
+	box-shadow: 3px 3px 3px 3px #888888;
+	border-radius:18px;
+	height: 100%;
+	width: 100%;
+}
 </style>
 <body>
  <%
@@ -373,6 +380,20 @@ display: block;
 		    </div>
 		  </div>
 	</div>
+	
+	<div class="page m-3" style = "box-shadow:none;">
+		<div class = "row">
+			<div class = "col-md-6 mt-3">
+				<img src = "assets/img/2_2.jpg" class = "advt-image" style = "float:left;"/>
+			</div>
+			<div class = "col-md-6 mt-3">
+				<img src = "assets/img/2_6.jpg" class = "advt-image" style = "float:right;"/>
+			</div>
+		</div>
+		
+	</div>
+	<br />
+	
 	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
 		  <!-- Slider main container -->
 		  <div class="cards-slider" style = "padding:0px 0px">
@@ -381,7 +402,7 @@ display: block;
 		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
 		  	</div>
 		  
-		  	<hr>
+		  	<hr> 
 		    <div class="swiper-container">
 		      <!-- Additional required wrapper -->
 		      <div class="swiper-wrapper">
@@ -700,6 +721,16 @@ display: block;
 		    </div>
 		  </div>
 	</div>
+	
+	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
+		<div class = "row">
+			<div class = "col-md-12">
+				<img src = "assets/img/2_2.jpg" class = "advt-image"/>
+			</div>
+		</div>
+		
+	</div>
+	
 	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
 		  <!-- Slider main container -->
 		  <div class="cards-slider" style = "padding:0px 0px">
