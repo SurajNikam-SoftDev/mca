@@ -1,3 +1,8 @@
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="com.apnidukaan.bean.UserBean"%>
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="com.apnidukaan.bean.ProductBean"%>
+<%@page import="java.net.InetAddress"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -38,6 +43,17 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	String key = request.getParameter("key") != null || request.getParameter("key") != ""
+	? request.getParameter("key")
+	: "undefined";
+	key = key.isEmpty() ? "undefined" : key; 
+	
+	InetAddress IP=InetAddress.getLocalHost();
+	
+	//System.out.println("key :: "+key +", IP Address ::"+IP);
+	
+	ProductBean pb = ProductDao.getProductDetailsById(key);
 %> 
     <header> 
         <div class="header">
@@ -90,80 +106,187 @@
   
             <!-- Sorry! Lightbox doesn't work - yet. -->
               
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-slide-number="0">
-                  <img src="https://source.unsplash.com/Pn6iimgM-wo/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style = "height:400px;">
+              <div class="carousel-inner justify-content-center" style = "height:300px;width:100%;">
+                <%
+                	if(pb.getProdimg1().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item active " style = ";height:100%;" data-slide-number="0">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="1">
-                  <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg2().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="1">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg2() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg2() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="2">
-                  <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg3().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="2">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg3() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg3() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="3">
-                  <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg4().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="3">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg4() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg4() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="4">
-                  <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg5().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="4">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg5() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg5() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="5">
-                  <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg6().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="5">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg6() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg6() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="6">
-                  <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg7().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="6">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg7() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg7() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="7">
-                  <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg8().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="7">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg8() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg8() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="8">
-                  <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg9().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="8">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg9() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg9() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
-                <div class="carousel-item" data-slide-number="9">
-                  <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                <%
+                	}
+                	if(pb.getProdimg10().equals("undefined")){}
+                	else{
+                %>
+                <div class="carousel-item" style = ";height:100%;" data-slide-number="9">
+                  <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg10() %>" class="mx-auto d-block" alt="..." data-remote="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg10() %>" style = "object-fit:contain" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                 </div>
+                <%
+                	}
+                %>
               </div>
             </div>
             
             <!-- Carousel Navigation -->
-            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel" style = "padding:0">
+              <div class="carousel-inner" style = ";height:100px;">
+                <div class="carousel-item active" style = "">
                   <div class="row mx-0">
+                  	<%
+                		if(pb.getProdimg1().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                      <img src="https://source.unsplash.com/Pn6iimgM-wo/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+                    	if(pb.getProdimg2().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
-                      <img src="https://source.unsplash.com/tXqVe7oO-go/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg2() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+                		if(pb.getProdimg3().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
-                      <img src="https://source.unsplash.com/qlYQb7B9vog/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg3() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
-                      <img src="https://source.unsplash.com/QfEfkWk1Uhk/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg4() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
-                      <img src="https://source.unsplash.com/CSIcgaLiFO0/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
-                      <img src="https://source.unsplash.com/a_xa7RUKzdc/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	
+                    %>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row mx-0">
+                  	<%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
-                      <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="7">
-                      <img src="https://source.unsplash.com/_snqARKTgoc/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="8">
-                      <img src="https://source.unsplash.com/M9F8VR0jEPM/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+	                	if(pb.getProdimg4().equals("undefined")){}
+	                	else{
+	                %>
                     <div id="carousel-selector-9" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="9">
-                      <img src="https://source.unsplash.com/Q1p7bh3SHj8/600x400/" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
+                    <%
+	                	}
+                    %>
                     <div class="col-2 px-1 py-2"></div>
                     <div class="col-2 px-1 py-2"></div>
                   </div>
@@ -183,8 +306,8 @@
         </div>
         <div class="col-md-7">
           <br>
-          <b class="product-title">Product Title</b>
-          <p class="product-subtitle">Product Subtitle</p>
+          <b class="product-title"><%= pb.getProductname() %></b>
+          <p class="product-subtitle"><%= pb.getProductsubtitle().equals("undefined")?"<br>":pb.getProductsubtitle() %></p>
           <div class="rating-section">
               <span class="fa fa-star checked staricon"></span>
               <span class="fa fa-star checked staricon"></span>
@@ -193,35 +316,35 @@
               <span class="fa fa-star staricon"></span>
               3/5.
           </div>
-          <b class="price">650.00</b>
-          <p class="delivery">+ Free Delivery</p>
-          <label for = "quantity" style="font-size: medium;font-weight: bolder;">Qty: </label> <input type = "number" value="1" style = "font-weight:bolder;width:60px;padding: 5px;">
+          
+          <p class="delivery"><%= pb.getCashondelivery() %></p>
           <div class="policies">
             <b>Prepaid Available</b>
-            <p>No return Policy</p>
+            <p><%= pb.getAllowreturn().equals("Allow Return") && pb.getReturnperiod().equals("0")? "Not Allowed Return" :pb.getAllowreturn() +" "+ pb.getReturnperiod() %></p>
           </div>
           
         </div>
       </div>
       
     </div>
-    
     <div class="button-container">
       <div class="btn-group text-center" role="group" aria-label="Basic example" style="width: 100%;">
-        <button type="button" class="btn btn-warning " onclick="addtocart()" style = "color:white;">Add To Cart</button>
-        <button type="button" class="btn btn-success" onclick="buynow()">Buy Now</button>
+        <a class="btn btn-warning " onclick="location.href='AddProductToCart?key=<%= key %>'" style = "color:white;">Add To Cart</a>
+        <a class="btn btn-success" onclick="location.href='PlaceOrder?key=<%= key %>'">Buy Now</a>
       </div>
     </div>
     
-
+<%
+	UserBean ub = UserDao.getShopDetailById(pb.getUserid());
+%>
     <div class = "col page-heading mt-2" style="background-color: white;padding:20px 15px 10px 15px;box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);">
       <div class = "row">
           <div class="col">
               <p>Sold By:</p>
-              <h6>Shop Name</h6>
+              <h6><%= ub.getShopname().equals("undefined")?"":ub.getShopname() %> <small>(Owner Name <%= ub.getName() %>)</small></h6>
           </div>
           <div class="col text-right pt-3">
-            <a href="javascript:void(0)" onclick="location.href='ViewShop'"  class = "addproductbutton" style = "text-decoration: none;">VIEW SHOP</a>
+            <a href="javascript:void(0)" onclick="location.href='ViewShop?key=<%= pb.getUserid() %>'"  class = "addproductbutton" style = "text-decoration: none;">VIEW SHOP</a>
           </div>
       </div>   
     </div>
@@ -229,15 +352,7 @@
     <div class = "product-description-bar mt-2">
       <b>Product Description</b>
       <p class = "product-description pt-2">
-        Triple rear camera setup- Main Camera 12MP Dual Pixel + Ultra Wide 12MP Camera + Tele1 3X 64MP Camera | 10MP front Dual Pixel Camera
-        <br>
-        (6.7-inch) Dynamic AMOLED 2X Display, FHD+ resolution with 2400 X 1080 pixels resolution, 394 PPI with 16M colours
-        <br>
-        8GB RAM | 128GB internal Storage | Dual SIM (nano+nano) dual-standby (5G+5G)
-        <br>
-        Android Pie v10.0 operating system with 2.9GHz Exynos 2100 octa core processor
-        <br>
-        4800mAH lithium-ion battery, 1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase
+        <%= pb.getDescription() %>
       </p>
     </div>
 
@@ -279,18 +394,8 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
-    <script type="text/JavaScript">
-     function addtocart()
-      {
-        window.location.href = "AddToCart";
-      }
-      function buynow()
-      {
-        window.location.href = "PlaceOrder";
-      }
-
-    </script>
+   
+   	
     <script type="text/JavaScript">
       $('#myCarousel').carousel({
         interval: false
@@ -352,6 +457,8 @@
         var src = $(e.target).attr('data-remote');
         if (src) $(this).ekkoLightbox();
       });
+      
+      
     </script>
 
     <script>

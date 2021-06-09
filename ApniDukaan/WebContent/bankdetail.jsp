@@ -68,23 +68,24 @@
         <div class = "form-header pt-3">
             <h5>Bank Details</h5>
         </div>
-        <form class = "form-body">
+        <form class = "form-body" action="./BankDetail" method="POST">
             <div class="form-group">
-                <label for="accountno">Account Number</label>
-                <input type="text" class="form-control" name="accountno" placeholder="Account Number">
+                <label for="accountno">Account Number<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                <input type="text" class="form-control" id = "accountno" name="accountno" placeholder="Account Number">
             </div>
             <div class="form-group">
-                <label for="confirmaccountnumber">Confirm Account Number</label>
-                <input type="text" class="form-control" name="confirmaccountnumber" placeholder="Confirm Account Number">
+                <label for="confirmaccountnumber">Confirm Account Number<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                <input type="text" class="form-control" id = "confirmaccountnumber"  name="confirmaccountnumber" placeholder="Confirm Account Number">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="accountholdername">Account Holder Name</label>
-                    <input type="text" class="form-control" name="accountholdername" placeholder="Account Holder Name">
+                    <label for="accountholdername">Account Holder Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control"  id = "accountholdername" name="accountholdername" placeholder="Account Holder Name">
+                    <small style = "font-style:oblique;">Write Same As Passbook Account Name</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="ifsccode">IFSC Code</label>
-                    <input type="text" class="form-control" name="ifsccode" placeholder="IFSC Code">
+                    <label for="ifsccode">IFSC Code<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control"  id = "ifsccode" name="ifsccode" placeholder="IFSC Code">
                 </div>
             </div>
 
@@ -98,34 +99,12 @@
             
             <div class = "text-center mt-3">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+                <button type="submit" class="btn btn-primary form-control" id = "onsubmitbutton" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
             </div>
+            <div class = "text-center mt-3">
+				<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+			</div>
             
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class = "modal-symbol">
-                            <img src="https://media.giphy.com/media/YlSR3n9yZrxfgVzagm/giphy.gif" class="modal-image" style = "height:100px; width: 100px;"> <!-- saved -->
-                            <!-- <img src="https://media.giphy.com/media/L2NX9o62VOsZqH8IPp/giphy.gif" class="modal-image">  delete -->
-                            <!-- <img src="https://media.giphy.com/media/hlvIX2f1zeLESr2DI4/giphy.gif" class="modal-image">  update -->  
-                        </div>
-                    Data Saved Successfully!!!
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-primary" onclick = "validation()">Okay</button>
-                    </div>
-                </div>
-                </div>
-            </div>
             
             <br>
         </form>
@@ -175,9 +154,56 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
     <script type="text/JavaScript">
-        function  validation() {
-            window.location.href = "Account";
-        }
+    	var contactexp = /^\d{10}$/;
+    	var accountnoexp = /^\d{9,18}$/;
+	//	var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	//	var zipexp = /^\d{6}$/;
+	//	var letterexp = /^[A-Za-z]+$/;
+		var numberexp = /\d+/g;
+		var letterspaceexp = /^[a-zA-Z\s]*$/g;
+	//	accountno confirmaccountnumber accountholdername ifsccode
+	
+		$('#onsubmitbutton').click(function() {  
+			
+			if($('#accountno').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Account Number";
+				return false;
+			}
+			else if(!(accountnoexp.test($('#accountno').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Numbers And Correct Account Number";
+				return false;
+			}
+			else if($('#confirmaccountnumber').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Confirm Account Number";
+				return false;
+			}
+			else if(!(accountnoexp.test($('#confirmaccountnumber').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Numbers In Confirm Account Number";
+				return false;
+			}
+			else if( $('#accountno').val() !== $('#confirmaccountnumber').val() ){
+				document.getElementById('errorspan').innerHTML = "Account Number And Confirm Account Number Is Not Same";
+				return false;
+			}
+			else if($('#accountholdername').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Account Holder Name";
+				return false;
+			}
+			else if(!(letterspaceexp.test($('#accountholdername').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Letters Only In Account Holder Name";
+				return false;
+			}
+			else if($('#ifsccode').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter IFSC Code";
+				return false;
+			}
+			else{
+				document.getElementById('errorspan').innerHTML = "";
+				return true;
+			}
+			
+			return true;
+		});	
     </script>
     
 
@@ -186,40 +212,6 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
-        
-        
-        $( function() {
-          var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
-          ];
-          $( "#tags" ).autocomplete({
-            source: availableTags,
-            autoFocus:true
-          });
-        } );
-
-        
-    </script>
+     </script>
 </body>
 </html>

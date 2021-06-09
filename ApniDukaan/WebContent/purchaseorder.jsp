@@ -1,3 +1,11 @@
+<%@page import="com.apnidukaan.bean.PurchaseOrderBean"%>
+<%@page import="com.apnidukaan.dao.PlaceOrderDao"%>
+<%@page import="java.net.InetAddress"%>
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="com.apnidukaan.bean.ProductBean"%>
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="java.util.List"%>
+<%@page import="com.apnidukaan.bean.PlaceOrderBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -30,6 +38,15 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	HttpSession session2=request.getSession(false); 
+	
+	String userid = UserDao.getUserIdByEmail(session.getAttribute("emailid").toString());
+	/* System.out.println("User id :: "+userid); */
+	InetAddress IP=InetAddress.getLocalHost();
+	
+	
+	List<PurchaseOrderBean> list = PlaceOrderDao.getPurchaseOrderRecordById(userid); 
 %> 
     <header> 
         <div class="header">
@@ -72,69 +89,40 @@
     </header>
 
     
-    <div class="container purchase-container ">
-        <a href="javascript:void(0)" onclick="location.href='OrderDetails'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
+    <div class="container-fluid purchase-container mt-2">
+<%
+	for(PurchaseOrderBean order: list)
+	{
+%>
+        <a href="javascript:void(0)" onclick="location.href='OrderDetails?key=<%=order.getParcelid() %>'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
             <div class = "row purchase-bar">
                 <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
-                    <img src = "assets/img/2.jpg" class = "purchase-img" alt="Product Img"/>
+                    <img src = "http://<%=IP.getHostAddress() %>/uploads/<%= order.getProdimg1() %>" class = "purchase-img" alt="Product Img"/>
                 </div>
                 <div class = "col-9 purchase-header" >
-                    <b class = "header-title">Delivered</b>
-                    <p class = "header-subtitle">Product Title and Subtitle</p>
-                    <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
+                    <b class = "header-title"><%= order.getOpstatus() %></b>
+                    <p class = "header-subtitle"><%= order.getProducttitle() %></p>
+                    <p class = "price-title mt-0"><%= order.getPaymenttype() %>: Rs. <%= order.getPrice() %></p>
                 </div>
             </div>
         </a>
-        <a href="javascript:void(0)" onclick="location.href='OrderDetails'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
-            <div class = "row purchase-bar">
-                <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
-                    <img src = "assets/img/2.jpg" class = "purchase-img" alt="Product Img"/>
-                </div>
-                <div class = "col-9 purchase-header" >
-                    <b class = "header-title">Delivered</b>
-                    <p class = "header-subtitle">Product Title and Subtitle</p>
-                    <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:void(0)" onclick="location.href='OrderDetails'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
-            <div class = "row purchase-bar">
-                <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
-                    <img src = "assets/img/2.jpg" class = "purchase-img" alt="Product Img"/>
-                </div>
-                <div class = "col-9 purchase-header" >
-                    <b class = "header-title">Delivered</b>
-                    <p class = "header-subtitle">Product Title and Subtitle</p>
-                    <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:void(0)" onclick="location.href='OrderDetails'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
-            <div class = "row purchase-bar">
-                <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
-                    <img src = "assets/img/2.jpg" class = "purchase-img" alt="Product Img"/>
-                </div>
-                <div class = "col-9 purchase-header" >
-                    <b class = "header-title">Delivered</b>
-                    <p class = "header-subtitle">Product Title and Subtitle</p>
-                    <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
-                </div>
-            </div>
-        </a>
-        <a href="javascript:void(0)" onclick="location.href='OrderDetails'" style = "text-decoration: none;color:black;" >                <div class="row"></div>
-            <div class = "row purchase-bar">
-                <div class = "col-3 text-left " style = "display:block;margin-left: auto;margin-right: auto;">
-                    <img src = "assets/img/2.jpg" class = "purchase-img" alt="Product Img"/>
-                </div>
-                <div class = "col-9 purchase-header" >
-                    <b class = "header-title">Delivered</b>
-                    <p class = "header-subtitle">Product Title and Subtitle</p>
-                    <p class = "price-title mt-0">Cash On Delivery: Rs. 650.00 </p>
-                </div>
-            </div>
-        </a>    
+<%
+	}
+%>
+
+
     </div>
-    
+<%
+if(list.isEmpty())
+	{
+%> 
+	
+	<div class="pageheading text-center p-3 " style = "background-color: lightgrey;">
+        <b style = "font-size: 14px;">0 Products Order</b>
+    </div>
+<%
+	}
+%>   
 
     <br>
     <div class="container " >

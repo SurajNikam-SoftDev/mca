@@ -1,3 +1,8 @@
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="com.apnidukaan.dao.PaymentDao"%>
+<%@page import="com.apnidukaan.bean.PaymentBean"%>
+<%@page import="java.util.List"%>
+<%@page import="java.net.InetAddress"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -28,7 +33,12 @@
 	if(session.getAttribute("emailid")==null)
 	{
 		response.sendRedirect("./LogIn");
-	}	
+	}
+
+	String userid = UserDao.getUserIdByEmail(session.getAttribute("emailid").toString());
+//	System.out.println("User id :: "+userid);
+	List<PaymentBean> list =  PaymentDao.getAllPayments(userid);
+	InetAddress IP=InetAddress.getLocalHost();
 %> 
     <header> 
         <div class="header">
@@ -67,62 +77,49 @@
 
     
     <div class=" mypayment-container">
+<%
+	for(PaymentBean payment: list)
+	{
+%>        
         <div class = "row mypayment-bar mt-2">
             <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
+                <img src = "http://<%=IP.getHostAddress() %>/uploads/<%= payment.getProdimg1() %>" class = "mypayment-img" alt="Product Img"/>
             </div> 
             <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Pending</p>
+                <b class = "header-title">Order Id : <%= payment.getOrderid() %></b>
+                <p class = "header-subtitle"><%= payment.getPaymenttype()%> :
+<%
+	if(payment.getPaymentstatus().equals("Pending"))
+	{
+%>   
+		<b style = "color:red;font-weight:bolder;"><%= payment.getPaymentstatus() %></b>
+<%
+	}
+	else
+	{	
+%>   
+		<b style = "color:green;font-weight:bolder;"><%= payment.getPaymentstatus() %></b>
+<%
+	}
+%>       
+                </p>
             </div>
         </div>
-        <div class = "row mypayment-bar">
-            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
-            </div> 
-            <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Pending</p>
-            </div>
-        </div>
-        <div class = "row mypayment-bar">
-            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
-            </div> 
-            <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Paid</p>
-            </div>
-        </div>
-        <div class = "row mypayment-bar">
-            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
-            </div> 
-            <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Pending</p>
-            </div>
-        </div>
-        <div class = "row mypayment-bar">
-            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
-            </div> 
-            <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Paid</p>
-            </div>
-        </div>
-        <div class = "row mypayment-bar">
-            <div class = "col-3 text-left pt-2 pm-2" style = "display:block;margin-left: auto;margin-right: auto;">
-                <img src = "assets/img/2.jpg" class = "mypayment-img" alt="Product Img"/>
-            </div> 
-            <div class = "col-9 mypayment-header pt-2 pm-2" >
-                <b class = "header-title">Order Id : 16651132-6256350-63560332 </b>
-                <p class = "header-subtitle">Pending</p>
-            </div>
-        </div>
+<%
+	}
+%>        
+  	</div>
+<%
+if(list.isEmpty())
+	{
+%> 
+	
+	<div class="pageheading text-center p-3 mt-1" style = "background-color: lightgrey;">
+        <b style = "font-size: 14px;">0 Payment Transactions</b>
     </div>
-    
+<%
+	}
+%>    
 
     <br>
     <div class="container " >

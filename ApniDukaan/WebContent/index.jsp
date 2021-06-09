@@ -1,3 +1,7 @@
+<%@page import="com.apnidukaan.bean.ProductBean"%>
+<%@page import="java.util.List"%>
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="java.net.InetAddress"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/search.css">
     <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
-    <!-- <link rel="stylesheet" href="assets/css/products.css"> -->
+   	<link rel="stylesheet" href="assets/css/ourpartner.css">
 
     <!-- jquery-ui CSS -->
     
@@ -86,6 +90,8 @@ display: block;
 	{
 		response.sendRedirect("./LogIn");
 	}	
+ 
+ 	InetAddress IP=InetAddress.getLocalHost();
 %>    
     <header> 
         <div class="header">
@@ -108,25 +114,29 @@ display: block;
                     </div>
                     
                     <div class="col-md-12 pt-2">
-                        <form action="Search" method="GET" style = "z-index:0" >
+                        <form action="Search" method="POST" style = "z-index:0" >
                             <div class="input-group">
                             	<div class="input-group-append">
                             		<div class="btn-group">
-						                <button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;"><span class="selection">All</span><span class="caret"></span></button>
+						                <button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;z-index:0;"><span class="selection">All</span><span class="caret"></span></button>
 						                <ul class="dropdown-menu scrollable-menu"  id="dropdown" style = "font-size:12px;color:black;" role="menu">
-						                    <li><a href="#">All</a></li>
-						                    <li><a href="#">Fashion</a></li>                     
-	                                        <li><a href="#">Electronics</a></li>                  
-	                                        <li><a href="#">Home Appliances</a></li>                  
-	                                        <li><a href="#">Grocery</a></li>                          
-	                                        <li><a href="#">Mobile's</a></li>                                
-	                                        <li><a href="#">Women's Beauty</a></li>                           
-	                                        <li><a href="#">Men's Footwear</a></li>
-	                                        <li><a href="#">Baby & Kids</a></li>                           
-	                                        <li><a href="#">Health Care Essentials</a></li>
+						                    <li><a href="javascript:void(0)">All</a></li>
+						                    <li><a href="javascript:void(0)">Fashion</a></li>                     
+	                                        <li><a href="javascript:void(0)">Electronics</a></li>                  
+	                                        <li><a href="javascript:void(0)">Home Appliances</a></li>
+	                                        <li><a href="javascript:void(0)">Home & Kitchen</a></li>
+	                                        <li><a href="javascript:void(0)">Furniture</a></li>                  
+	                                        <li><a href="javascript:void(0)">Grocery</a></li>                          
+	                                        <li><a href="javascript:void(0)">Mobile's</a></li>                                
+	                                        <li><a href="javascript:void(0)">Women's Beauty</a></li>                           
+	                                        <li><a href="javascript:void(0)">Men's Footwear</a></li>
+	                                        <li><a href="javascript:void(0)">Baby & Kids</a></li>                           
+	                                        <li><a href="javascript:void(0)">Health Care Essentials</a></li>
+	                                        <li><a href="javascript:void(0)">Sports, Fitness & Outdoors</a></li>
 						                </ul>
 						            </div> 
-						            
+									<input type = "hidden" class = "searchcategory">
+ 				            
 								</div>
                                 <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
@@ -136,22 +146,25 @@ display: block;
                         </form>
                     </div>
                     <div class="col-md-12 sticky">
-                        <form action="Search" method="GET" >
+                        <form action="Search" method="POST" >
                             <div class="input-group">
                             	<div class="input-group-append">
                             		<div class="btn-group">
 						                <button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;"><span class="selection">All</span><span class="caret"></span></button>
 						                <ul class="dropdown-menu scrollable-menu"  id="dropdown" style = "font-size:12px;color:black;" role="menu">
-						                    <li><a href="#">All</a></li>
-						                    <li><a href="#">Fashion</a></li>                     
-	                                        <li><a href="#">Electronics</a></li>                  
-	                                        <li><a href="#">Home Appliances</a></li>                  
-	                                        <li><a href="#">Grocery</a></li>                          
-	                                        <li><a href="#">Mobile's</a></li>                                
-	                                        <li><a href="#">Women's Beauty</a></li>                           
-	                                        <li><a href="#">Men's Footwear</a></li>
-	                                        <li><a href="#">Baby & Kids</a></li>                           
-	                                        <li><a href="#">Health Care Essentials</a></li>
+						                   <li><a href="javascript:void(0)">All</a></li>
+						                    <li><a href="javascript:void(0)">Fashion</a></li>                     
+	                                        <li><a href="javascript:void(0)">Electronics</a></li>                  
+	                                        <li><a href="javascript:void(0)">Home Appliances</a></li>
+	                                        <li><a href="javascript:void(0)">Home & Kitchen</a></li>
+	                                        <li><a href="javascript:void(0)">Furniture</a></li>                  
+	                                        <li><a href="javascript:void(0)">Grocery</a></li>                          
+	                                        <li><a href="javascript:void(0)">Mobile's</a></li>                                
+	                                        <li><a href="javascript:void(0)">Women's Beauty</a></li>                           
+	                                        <li><a href="javascript:void(0)">Men's Footwear</a></li>
+	                                        <li><a href="javascript:void(0)">Baby & Kids</a></li>                           
+	                                        <li><a href="javascript:void(0)">Health Care Essentials</a></li>
+	                                        <li><a href="javascript:void(0)">Sports, Fitness & Outdoors</a></li>
 						                </ul>
 						            </div> 
 						            
@@ -381,12 +394,12 @@ display: block;
 		  </div>
 	</div>
 	
-	<div class="page m-3" style = "box-shadow:none;">
+	<div style = "box-shadow:none;margin:0px 15px 0px 15px;">
 		<div class = "row">
-			<div class = "col-md-6 mt-3">
+			<div class = "col-md-6 mt-2">
 				<img src = "assets/img/2_2.jpg" class = "advt-image" style = "float:left;"/>
 			</div>
-			<div class = "col-md-6 mt-3">
+			<div class = "col-md-6 mt-2">
 				<img src = "assets/img/2_6.jpg" class = "advt-image" style = "float:right;"/>
 			</div>
 		</div>
@@ -407,146 +420,33 @@ display: block;
 		      <!-- Additional required wrapper -->
 		      <div class="swiper-wrapper">
 		        <!-- Slides -->
+<%
+		List<ProductBean> list = ProductDao.getProductsByCategory("Fashion");
+		for(ProductBean product: list)
+		{
+			
+%>		       
 		        <div class="swiper-slide">
 		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
+		          		<div class = "card-image text-center" style ="height:253.12px;width:253.12px;padding:10px;">
+							<img class="card-img-top" src="http://<%=IP.getHostAddress() %>/uploads/<%= product.getProdimg1() %>"
+							alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin-left: auto;margin-right: auto;display: block;"><!--  height= "323.25" width = "323.25" -->
+						</div>
+		          		
                         <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
+                        	<p class="card-text text-left"><b><%= product.getProductname().length() > 30? product.getProductname().substring(0, 30)+"...": product.getProductname() %></b></p>
+                            <p class="card-text text-right inr-price">Rs. <%= product.getProductprice() %></p>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
+                          	<a class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="location.href='AddProductToCart?key=<%= product.getPid() %>'" ><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></a>
+                            <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="location.href='AddProductToWishList?key=<%= product.getPid() %>'"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></a>
+                            <a class="btn btn-success pt-3" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="location.href='ViewProduct?key=<%= product.getPid() %>'" >Buy</a>
                         </div>
                      </div>
 		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
-		        <div class="swiper-slide">
-		          <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                    	<img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                        <div class="card-body" style = "border-radius:18px;">
-                        	<p class="card-text text-left"><b>Product Title </b></p>
-                            <p class="card-text text-right inr-price">Rs. 650.00</p>
-                        </div>
-                        <div class="btn-group" role="group" aria-label="Basic example" >
-                          	<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Add To WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                        </div>
-                     </div>
-		        </div>
+<%
+		}
+%>		        
 		      </div>
 		
 		      <!-- If we need pagination -->
@@ -1058,6 +958,17 @@ display: block;
 		    </div>
 		  </div>
 	</div>
+	
+	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
+		<div class = "row">
+			<div class = "col-md-12">
+				<img src = "assets/img/2_5.jpg" class = "advt-image"/>
+			</div>
+		</div>
+		
+	</div>
+	
+	
 	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
 		  <!-- Slider main container -->
 		  <div class="cards-slider" style = "padding:0px 0px">
@@ -1547,6 +1458,17 @@ display: block;
 		    </div>
 		  </div>
 	</div>
+	
+	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
+		<div class = "row">
+			<div class = "col-md-12">
+				<img src = "assets/img/2_6.jpg" class = "advt-image"/>
+			</div>
+		</div>
+		
+	</div>
+	
+	
 	<div class="page m-3" style = "background-color:white;box-shadow: 3px 3px 3px 3px #888888;border-radius:18px;">
 		  <!-- Slider main container -->
 		  <div class="cards-slider" style = "padding:0px 0px">
@@ -1874,6 +1796,29 @@ display: block;
 		  </div>
 	</div>
 	
+	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:3px 3px 3px 3px #888888;">
+		
+		<div class="cards-slider" style = "padding:0px 0px">
+		  	<div class = "" style = "padding:25px;">
+		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Our Partner's</b>
+		  	</div>
+		  	<hr>
+		  	<section class="customer-logos slider">
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+		      <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+		   		
+		   </section>
+		   <br>
+		</div>  	
+			
+		
+	</div>
 	
 	
     <div class="container mt-4" >
@@ -1921,6 +1866,7 @@ display: block;
     $(function () {
         $("#dropdown li").click(function () {
         	$("#AdvancedSearch .selection").text($(this).text());
+        	$(".searchcategory").val($(this).text());
         });
     });
     
@@ -1940,6 +1886,7 @@ display: block;
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     
     <script type="text/javascript">
         function viewproduct(){
@@ -2011,6 +1958,31 @@ display: block;
 
         
         
+        </script>
+        
+        <script>
+        $(document).ready(function(){
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
         </script>
        
 </body>

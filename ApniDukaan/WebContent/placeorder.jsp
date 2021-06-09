@@ -1,3 +1,10 @@
+<%@page import="com.apnidukaan.bean.AddressBean"%>
+<%@page import="java.util.List"%>
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="com.apnidukaan.dao.AddressDao"%>
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="com.apnidukaan.bean.ProductBean"%>
+<%@page import="java.net.InetAddress"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -43,6 +50,17 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	String key = request.getParameter("key") != null || request.getParameter("key") != ""
+	? request.getParameter("key")
+	: "undefined";
+	key = key.isEmpty() ? "undefined" : key; 
+	
+	InetAddress IP=InetAddress.getLocalHost();
+	
+	//System.out.println("key :: "+key +", IP Address ::"+IP);
+	
+	ProductBean pb = ProductDao.getProductPlaceOrderRecordById(key);
 %> 
     <header> 
         <div class="header">
@@ -89,17 +107,21 @@
 
 
     <div class="productimage-slider" style = "background-color: white;padding: 25px;">
-    	<form method = "POST" action = "./PlaceOrder">
+    <form method = "POST" action = "./PlaceOrder">
+    	<input type = "hidden" name = "key" value = "<%= key%>">
       <div class="form-row">
         <div class="col-md-7">
         	<div class = "row">
-        		<div class = "col-md-5 text-center">
-        			<img src = "assets/img/2.jpg" class = "thumbnail-image" alt = "Product Image"/>
-        		</div>
-        		<div class = "col-md-7">
+        		<div class = "col-md-7 text-center">
+        			<div style = "padding:5px;height:450px;width:450px;margin:0;">
+        				<img src = "http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" style = "border-radius:18px;object-fit:scale-down;height:100%;width:100%;" alt = "Product Image"/>
+        			</div>
         			
-			          <b class="product-title">Product Title</b>
-			          <p class="product-subtitle">Product Subtitle</p>
+        		</div>
+        		<div class = "col-md-5">
+        			<div class = "mt-5">
+        				<b class="product-title"><%= pb.getProductname() %></b>
+			          <p class="product-subtitle"><%= pb.getProductsubtitle().equals("undefined")?"<br>":pb.getProductsubtitle() %></p>
 			          <div class="rating-section">
 			              <span class="fa fa-star checked staricon"></span>
 			              <span class="fa fa-star checked staricon"></span>
@@ -108,37 +130,54 @@
 			              <span class="fa fa-star staricon"></span>
 			              3/5.
 			          </div>
-			          <b class="price">650.00</b>
-			          <p class="delivery">+ Free Delivery</p>
-			          <label for = "quantity" style="font-size: medium;font-weight: bolder;">Qty: </label> <input type = "number" value="1" style = "font-weight:bolder;width:60px;padding: 5px;"> 
+			          <input type = "hidden" id = "price" value = "<%= pb.getProductprice() %>"><br>
+			          <input type = "hidden" id = "qtyprice" name = "qtyprice" ><br> 
+			          <b class="price">Rs. <span id = "spanprice"></span></b><br>
+          			  <p class="delivery"></p>
+          			  <label for = "quantity" style="font-size: medium;font-weight: bolder;">Qty: </label> <input type = "number"  min="1" value="1" name = "qty" id = "qty" style = "font-weight:bolder;width:60px;padding: 5px;"> 
 			          <div class="policies">
 			            <b>Prepaid Available</b>
-			            <p>No return Policy</p>
+			            <p><%= pb.getAllowreturn().equals("Allow Return") && pb.getReturnperiod().equals("0")? "Not Allowed Return" :pb.getAllowreturn() +" "+ pb.getReturnperiod() %></p>
 			          </div>
+        			</div>
         		</div>
         	</div>
         </div>
         <div class="col-md-5">
-          <div class="checkout-container" style = "background-color:whitesmoke;padding:25px;border-radius:15px;">
+          <div class="checkout-container mt-5" style = "background-color:whitesmoke;padding:25px;border-radius:15px;">
           	<!-- <form method = "POST" action = "./PlaceOrder"> -->
           		
           	  	<div class = "placeorder-container">
 	          		<div class="form-group">
 			           	<label for="inputAddress">Select Payment Type</label>
-			            <select name="category" class="form-control" style = "font-size: 12px;">
-			            	<option selected>Choose Payment Type...</option>
-			                <option>Cash On Delivery</option>
-			                <option>Online Payment</option>
+			            <select name="paymentcategory" class="form-control" style = "font-size: 12px;">
+			            	<option selected>Cash On Delivery</option>
+			       <!--     <option>Online Payment</option> -->
 			            </select>
 			        </div>
 			        <div class="form-group">
 			            <label for="inputAddress">Place Order Address</label>
-			            <select name="category" class="form-control" style = "font-size: 12px;">
-			            	<option selected>Choose Address...</option>
-			                <option>Address 1</option>
-			                <option>Address 2</option>
-			                <option>Address 3</option>
+			            <select name="address" id = "address" class="form-control" style = "font-size: 12px;">
+<%
+	String userid = UserDao.getUserIdByEmail(session.getAttribute("emailid").toString());
+//	System.out.println("User id :: "+userid);
+	List<AddressBean> ab = AddressDao.getAllRecords(userid);
+	
+%>			 
+			            	<option value = "-1" selected>Choose Address...</option>
+<%
+	for(AddressBean address: ab)
+	{
+%>			            	
+							<option><%= address.getHousenobuildingname()+", "+ address.getRoadnameareacolony()+", "+ address.getLandmark() +", "+ address.getState()+", "+ address.getCity()+", "+ address.getPincode() %></option>
+<%		
+	}
+%>			                
 		                </select>
+			        </div>
+			        <div class="form-group">
+			           	<label for="inputAddress">Your Contact Number</label>
+			           	<input type="text" class="form-control" value = "<%= UserDao.getReceipantContactById(userid) %>" readonly>
 			        </div>
 	          	</div>
 	          	<!-- <div style = "background-color:lightgreen;height:60px;border-radius:8px;padding:10px;color:green;font-weight:bolder">
@@ -146,32 +185,18 @@
 	          	</div> -->
 	          	<div class="button-container mt-2">
 			      <div class="btn-group text-center" role="group" aria-label="Basic example" style="width: 100%;">
-			        <button type="submit" class="btn" style = "background-color:#002060;color:white;">Place Order</button>
+			        <button type="submit" class="btn" style = "background-color:#002060;color:white;" id = "onsubmitbutton">Place Order</button>
 			      </div>
 			    </div>
-		    
+		    	<div class = "text-center mt-3">
+					<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+				</div>
           </div>
         </div>
       </div>
       </form>	
     </div>
-    
-    
-    
-
-    <div class = "col page-heading mt-2" style="background-color: white;padding:20px 15px 10px 15px;box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);">
-      <div class = "row">
-          <div class="col">
-              <p>Sold By:</p>
-              <h6>Shop Name</h6>
-          </div>
-          <div class="col text-right pt-3">
-            <a href="javascript:void(0)" onclick="location.href='ViewShop'"  class = "addproductbutton" style = "text-decoration: none;">VIEW SHOP</a>
-          </div>
-      </div>   
-    </div>
-    
-    
+   
     
     <div class="container mt-5" >
         <p>Copyright @ 2021 All Rights Reserved. Terms of Use | Privacy Policy AND Website Design and Developed By <b style = "font-style:oblique;font-weight:bolder;">Suraj Nikam</b></p>
@@ -212,17 +237,46 @@
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <script type="text/JavaScript">
-     function addtocart()
-      {
-        window.location.href = "AddToCart";
-      }
-      function buynow()
-      {
-        window.location.href = "SaveProductOrder";
-      }
-
-    </script>
+    <script>
+   	
+   	$( document ).ready(function() {
+   		var netprice = $('#qty').val() * $('#price').val(); 
+   	   	$('#spanprice').html(netprice+".00");
+   	 	$("#qtyprice").val(netprice+".00")
+   	});
+   	
+   	$("#qty").change(function(){
+   	 	var netprice = $('#qty').val() * $('#price').val(); 
+   		$('#spanprice').html(netprice+".00");
+   		$("#qtyprice").val(netprice+".00")
+   		
+   	});   	
+   	</script>
+   	
+    <script>
+   
+	//  var contactexp = /^\d{10}$/;
+	//	var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	//	var zipexp = /^\d{6}$/;
+	//	var letterexp = /^[A-Za-z]+$/;
+	//	var numberexp = /\d+/g;
+	
+		$('#onsubmitbutton').click(function() {
+			
+			if($('#address').val() == '-1'){
+				document.getElementById('errorspan').innerHTML = "Select Address";
+				return false;
+			}
+			
+			else{
+				document.getElementById('errorspan').innerHTML = "";
+				return true;
+			}
+			 
+			return true;
+		});	
+		
+	</script>
     
     <script>
         function topFunction() {

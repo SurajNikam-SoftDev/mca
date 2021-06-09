@@ -15,7 +15,7 @@
     padding-top:25px;    
 }
 
-input[type=text]{
+input[type=text], input[type=file]{
     
     font-size: 12px;    
 }

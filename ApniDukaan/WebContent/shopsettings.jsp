@@ -1,3 +1,5 @@
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="com.apnidukaan.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -21,52 +23,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <script type = "text/javascript">
-    	function validation(){
-    		/*
-    		var contactno = document.getElementById("contactno").value;
-    		var emailid = document.getElementById("emailid").value;
-    		var zipcode = document.getElementById("zipcode").value;
-    		var name = document.getElementById("name").value;
-			*/
-    		alert();
-    		var contactexp = /^\d{10}$/;
-			var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			var zipexp = /^\d{6}$/;
-			var letterexp = /^[A-Za-z]+$/;	//	single word
-            var letterspaceexp = /^[a-zA-Z\s]*$/g;	//	multiple words
-			
-			alert(document.form.ownername.value);
-            if(document.form.ownername.value == '') 
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Your Name";  
-    			return false;
-    		}
-            else if(!document.form.ownername.value.match(letterexp))
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Characters Only";  
-    			return false;
-    		}
-            else if(document.form.contactno.value == '')
-    		{
-    			document.getElementById("errorspan").innerHTML = "Select Contact Number";  
-    			return false;
-    		} 
-    		else if(!document.form.contactno.value.match(contactexp))
-    		{
-    			document.getElementById("errorspan").innerHTML = "Enter Correct Contact Number";  
-    			return false; 
-    		}
-    		else
-    		{
-    			document.getElementById("errorspan").innerHTML = "";
-    			return false;
-    		}
-            
-            return false
-
-    	} 
-    </script>
+    
 </head>
 <body >
 <%
@@ -74,6 +31,9 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	UserBean ub = UserDao.getAllRecordsById(session.getAttribute("emailid").toString());
+
 %> 
     <header> 
         <div class="header">
@@ -107,36 +67,39 @@
     
         
     </header>
-
+  
     
     <div class="container form-container">
         <div class = "form-header pt-3">
             <h5>Shop Settings</h5>
         </div> <!-- action = "./ShopSettings"  method = "POST" -->
-        <form class = "form-body" name = "form" >
+        <form class = "form-body" name = "form" action = "ShopSettings" method = "POST">
+        	<input type="hidden" name="emailid" value = "<%= session.getAttribute("emailid")%>">
             <div class="form-group">
                 <label for="inputAddress">Shop Name</label>
-                <input type="text" class="form-control" name="shopname" placeholder="Shop Name">
+                <input type="text" class="form-control" name="shopname" placeholder="Shop Name" value = "<%= ub.getShopname().equals("undefined")?"":ub.getShopname() %>">
             </div>
             <div class="form-group">
                 <label for="inputAddress">Your Name<span style = "color:red;font-size:10px;font-weight:bolder;">*</span></label>
-                <input type="text" class="form-control" name="ownername" placeholder="Your Name">
-            </div>
+                <input type="text" class="form-control" id = "ownername" name="ownername" placeholder="Your Name"  value = "<%= ub.getName().equals("undefined")?"":ub.getName() %>" style = "text-transform:uppercase;">
+                <small style = "font-color:grey;font-weight:bolder;padding-left:14px;font-style:oblique;text-decoration:underline;">Write Your Name Like :</small><small><b style = "text-transform:uppercase;font-style:normal;"> FirstName MiddleName LastName</b></small>
+            </div> 
             <div class="form-row">
             	<div class="form-group col-md-6">
                     <label for="prepaidorderdiscount">Contact Number<span style = "color:red;font-size:10px;font-weight:bolder;">*</span></label>
-                    <input type="text" class="form-control" name="contactno" placeholder="Contact Number">
+                    <input type="text" class="form-control" name="contactno" placeholder="Contact Number" value = "<%= ub.getContact().equals("undefined")?"":ub.getContact() %>">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="prepaidorderdiscount">Prepaid Order Discount</label>
-                    <input type="text" class="form-control" name="prepaiddiscount" placeholder="Prepaid Order Discount">
+                    <input type="text" class="form-control" name="prepaiddiscount" placeholder="Prepaid Order Discount" value = "<%= ub.getPrepaiddiscount().equals("undefined")?"":ub.getPrepaiddiscount() %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="about">About</label>
                 <br>
-                <textarea style="width: 100%;font-size:12px;" class = "form-control" placeholder="Describe yourself here..." name = "about"></textarea>
-            </div>            
+                <textarea style="width: 100%;font-size:12px;" class = "form-control" placeholder="Describe yourself here..." maxlength="200" id="message" name = "about" value = "<%= ub.getAbout().equals("undefined")?"":ub.getAbout() %>" ></textarea>
+                <div id="counter" style = "float:right;margin-top:5px;"></div>
+            </div><br>            
             <div class = "text-center">
                 <!-- Button trigger modal -->
                 <button type="submit" class="btn btn-primary form-control"  style = "font-size: 12px;font-weight: bolder;" onclick = "return validation()">Submit</button>
@@ -192,6 +155,23 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+			const messageEle = document.getElementById('message');
+			const counterEle = document.getElementById('counter');
+
+			messageEle.addEventListener('input', function(e) {
+				const target = e.target;
+
+				// Get the `maxlength` attribute
+				const maxLength = target.getAttribute('maxlength');
+				
+				// Count the current number of characters
+				const currentLength = target.value.length;
+
+				counterEle.innerHTML = currentLength+ "/" +maxLength;
+			});
+	</script>
+    
     
     <script type="text/JavaScript">
         function  validation() {

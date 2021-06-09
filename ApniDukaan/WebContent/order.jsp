@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.apnidukaan.dao.PlaceOrderDao"%>
+<%@page import="com.apnidukaan.bean.OrderBean"%>
+<%@page import="com.apnidukaan.dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -28,6 +32,12 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	HttpSession session2=request.getSession(false); 
+	
+	String userid = UserDao.getUserIdByEmail(session.getAttribute("emailid").toString());
+	//System.out.println("User id :: "+userid);
+	List<OrderBean> list = PlaceOrderDao.getOrderRecordById(userid);
 %>     
     <header> 
         <div class="header">
@@ -63,112 +73,56 @@
         <table class="table table-striped table-bordered myDataTable" style = "width: 100%;">
             <thead>
                 <tr>
-                    <th class = "search-col">Order Id</th>
-                    <th class = "search-col">Customer Name</th>
-                    <th class = "search-col">Mobile No</th>
-                    <th class = "search-col">Product Name</th>
-                    <th class = "search-col">Price</th>
-                    <th class = "search-col" >Action</th>
+                    <th>Order Id</th>
+                    <th>Customer Name</th>
+                    <th>Mobile No</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Order Date</th>
+                    <th >Action</th>
                 </tr>
             </thead>
             <tbody>
+<%
+	for(OrderBean order: list)
+	{
+%>            
                 <tr>
-                    <td>suraj</td>
-                    <td>gajanan</td>
-                    <td>nikam</td>
-                    <td>8788451215</td>
-                    <td>suraj123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
+                    <td><%= order.getReferenceno() %></td>
+                    <td><%= order.getReceipantname() %></td>
+                    <td><%= order.getMobileno() %></td>
+                    <td><%= order.getProductname() %></td>
+                    <td><%= order.getQty() %></td>
+                    <td><%= order.getPrice() %></td>
+                    <td><%= order.getDate_created() %></td>
+                    <td class = "text-center">
+	                    <a href="javascript:void(0)" class = "btn btn-warning" data-toggle="tooltip" data-placement="top" title="View Order Details" onclick="location.href='ViewOrder?key=<%= order.getPid() %>'" style = "padding:3px;font-size:5px;color:white;text-decoration: none;"><i class="material-icons">visibility</i></a>
+<%
+	if(order.getOpstatus().equalsIgnoreCase("Pending"))
+	{
+%>	                    
+	                    <a href="javascript:void(0)" class = "btn btn-success" data-toggle="tooltip" data-placement="top" title="Approved Order For Delivery" onclick="location.href='OrderApproved?key=<%= order.getOrderid() %>'" style = "padding:3px;font-size:10px;color:white;font-weight:bolder;text-decoration: none;"><i class="material-icons">done</i></a>
+<%
+	}
+%>
+	                    <a href="javascript:void(0)" class = "btn btn-danger" data-toggle="tooltip" data-placement="top" title="Remove Order" onclick="location.href='OrderCancel?key=<%= order.getOrderid() %>'" style = "padding:3px;font-size:10px;color:white;font-weight:bolder;text-decoration: none;"><i class="material-icons">delete_forever</i></a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>akshay</td>
-                    <td>gajanan</td>
-                    <td>nikam</td>
-                    <td>1846524121</td>
-                    <td>akshay123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>mayur</td> 
-                    <td>a</td>
-                    <td>pawale</td>
-                    <td>2541251215</td>
-                    <td>mayur123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>suresh</td>
-                    <td>k</td>
-                    <td>choudhary</td>
-                    <td>2463541515</td>
-                    <td>suresh123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>vishal</td>
-                    <td>j</td>
-                    <td>chillal</td>
-                    <td>2168574122</td>
-                    <td>vishal123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>ajay</td>
-                    <td>g</td>
-                    <td>shinde</td>
-                    <td>13525010652</td>
-                    <td>ajay123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>akash</td>
-                    <td>n</td>
-                    <td>shinde</td>
-                    <td>8416524121</td>
-                    <td>akash123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>aniket</td> 
-                    <td>a</td>
-                    <td>mandavkar</td>
-                    <td>7524151215</td>
-                    <td>akash123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>sumesh</td>
-                    <td>k</td>
-                    <td>ojha</td>
-                    <td>8653541515</td>
-                    <td>sumesh123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>gaurav</td>
-                    <td>n</td>
-                    <td>kaveri</td>
-                    <td>6118574122</td>
-                    <td>gaurav123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
-                <tr>
-                    <td>shubham</td>
-                    <td>p</td>
-                    <td>pawar</td>
-                    <td>8755251215</td>
-                    <td>shubham123@gmail.com</td>
-                    <td class = "text-center"><a href="javascript:void(0)" onclick="location.href='ViewOrder'" class = "" style = "text-decoration: none;"><i class="material-icons nav__icon">visibility</i></a></td>
-                </tr>
+<%
+	}
+%>
             </tbody>
             <tfoot>
                 <tr>
-                    <th class = "search-col">Order Id</th>
-                    <th class = "search-col">Customer Name</th>
-                    <th class = "search-col">Mobile No</th>
-                    <th class = "search-col">Product Name</th>
-                    <th class = "search-col">Price</th>
-                    <th class = "search-col">Action</th>
+                    <th>Order Id</th>
+                    <th>Customer Name</th>
+                    <th>Mobile No</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Order Date</th>
+                    <th >Action</th>
                 </tr>
             </tfoot>
         </table>
@@ -229,12 +183,10 @@
             scrollX: true,
             scrollCollapse: true,
             
+            
         });
 
-        $('.myDataTable thead .search-col').each(function(){
-            var title = $(this).text();
-            $(this).jsp('<input type = "text" placeholder = "Search '+title+'" />');
-        });
+        /*
         
         table.columns().every(function(){
             var that = this;
@@ -245,8 +197,8 @@
                 } 
             });
         });
-		
-   
+		 
+   */
         function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;

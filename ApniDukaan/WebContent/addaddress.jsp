@@ -15,7 +15,9 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
-
+	<script src="assets/js/countries.js"></script>
+	
+	
     <!-- jquery-ui CSS -->
     
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
@@ -68,76 +70,52 @@
         <div class = "form-header pt-3">
             <h5>Add Address</h5>
         </div>
-        <form class = "form-body">
+        <form class = "form-body" action = "./AddAddress" method = "POST">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label for="mobilenumber">Mobile Number</label>
-                <input type="text" class="form-control" name="mobilenumber" placeholder="Mobile Number">
+                <label for="mobilenumber">Mobile Number<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" maxlength="10" placeholder="Mobile Number">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="housenobuildingname">House No. / Building Name</label>
-                    <input type="text" class="form-control" name="housenobuildingname" placeholder="House No. / Building Name">
+                    <label for="housenobuildingname">House No. / Building Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" id = "housenobuildingname" name="housenobuildingname" placeholder="House No. / Building Name">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="roadnameareacolony">Road Name, Area, Colony</label>
-                    <input type="text" class="form-control" name="roadnameareacolony" placeholder="Road Name, Area, Colony">
+                    <label for="roadnameareacolony">Road Name, Area, Colony<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" id = "roadnameareacolony" name="roadnameareacolony" placeholder="Road Name, Area, Colony">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" name="city" placeholder="City">
+                    <label for="state">State<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select id="state" name ="state"  class="form-control" style = "font-size: 12px;">
+                    	<option selected>Choose State</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control" name="state" placeholder="State">
+                    <label for="city">City<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select name ="city" id ="city" class="form-control" style = "font-size: 12px;">
+                    	<option selected>Choose City</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="landmark">Lankmark</label>
-                    <input type="text" class="form-control" name="landmark" placeholder="Lankmarke">
+                    <label for="landmark">Lankmark<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" id = "landmark" name="landmark" placeholder="Lankmark">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pincode">Pincode</label>
-                    <input type="text" class="form-control" name="pincode" placeholder="Pincode">
+                    <label for="pincode">Pincode<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label> 
+                    <input type="text" class="form-control" id = "pincode" name="pincode" maxlength="6" placeholder="Pincode">
                 </div>
-            </div>            
+            </div>          
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+                <button type="submit" class="btn btn-primary form-control" id = "onsubmitbutton" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
             </div>
             
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class = "modal-symbol">
-                            <img src="https://media.giphy.com/media/YlSR3n9yZrxfgVzagm/giphy.gif" class="modal-image" style = "height:100px; width: 100px;"> <!-- saved -->
-                            <!-- <img src="https://media.giphy.com/media/L2NX9o62VOsZqH8IPp/giphy.gif" class="modal-image">  delete -->
-                            <!-- <img src="https://media.giphy.com/media/hlvIX2f1zeLESr2DI4/giphy.gif" class="modal-image">  update -->  
-                        </div>
-                    Data Saved Successfully!!!
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-primary" onclick = "validation()">Okay</button>
-                    </div>
-                </div>
-                </div>
-            </div>
             
-            <br>
         </form>
-        
-        
+        <div class = "text-center mt-3">
+			<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+		</div>
+        <br>
     </div>
     
 
@@ -182,12 +160,63 @@
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <script type="text/JavaScript">
-        function  validation() {
-            window.location.href = "MyAddress";
-        }
-    </script>
-    
+    <script>    
+	    var contactexp = /^\d{10}$/;
+	//	var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var zipexp = /^\d{6}$/;
+	//	var letterexp = /^[A-Za-z]+$/;
+		var numberexp = /\d+/g;
+	
+		$('#onsubmitbutton').click(function() {  
+			
+			if($('#mobilenumber').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Mobile Number";
+				return false;
+			}
+			else if(!(contactexp.test($('#mobilenumber').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Correct Mobile Number";
+				return false;
+			}
+			else if($('#housenobuildingname').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter House No. / Building Name";
+				return false;
+			}
+			else if($('#roadnameareacolony').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Road Name, Area, Colony";
+				return false;
+			}
+			else if($('#state').val() == '-1'){
+				document.getElementById('errorspan').innerHTML = "Select State";
+				return false;
+			}
+			else if($('#city').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Select City";
+				return false;
+			}
+			else if($('#landmark').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Landmark";
+				return false;
+			}
+			else if($('#pincode').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Pincode";
+				return false;
+			}
+			else if(!(zipexp.test($('#pincode').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Correct Pincode";
+				return false;
+			}
+			else{
+				document.getElementById('errorspan').innerHTML = "";
+				return true;
+			}
+			
+			return true;
+		});	
+		
+	</script>
+    <script type="text/javascript">
+    	populateStates("state", "city");
+	</script>
     <script>
         function topFunction() {
         document.body.scrollTop = 0;

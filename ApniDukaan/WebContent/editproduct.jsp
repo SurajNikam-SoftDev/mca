@@ -1,3 +1,5 @@
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="com.apnidukaan.bean.ProductBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -15,7 +17,6 @@
     
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
-	<link href="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.css" rel="stylesheet">
 	
 	
     <!-- jquery-ui CSS -->
@@ -31,6 +32,15 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	String key = request.getParameter("key") != null || request.getParameter("key") != ""
+	? request.getParameter("key")
+	: "undefined";
+	key = key.isEmpty() ? "undefined" : key; 
+	
+//	System.out.println("key :: "+key);
+	
+	ProductBean pb = ProductDao.getAllRecordsById(key);
 %> 
     <header> 
         <div class="header">
@@ -70,28 +80,39 @@
         <div class = "form-header pt-3">
             <h5>Edit Product</h5>
         </div>
-        <form class = "form-body">
-            <div class="form-group">
-                <label for="inputAddress">Product Name</label>
-                <input type="text" class="form-control" name="productname" placeholder="Product Name">
+        <form class = "form-body" action = "./EditProduct" method = "POST">
+        	<input type="hidden" name = "key" value = "<%= key %>">
+            <div class="form-group"> 
+                <label for="inputAddress">Product Name<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                <input type="text" class="form-control" id = "productname" name="productname" value = "<%= pb.getProductname() %>" placeholder="Product Name">
             </div>
             <div class="form-group">
                 <label for="inputAddress">Product SubTitle</label>
-                <input type="text" class="form-control" name="productsubtitle" placeholder="Product SubTitle">
+                <input type="text" class="form-control" name="productsubtitle" value = "<%= pb.getProductsubtitle() %>" placeholder="Product SubTitle">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="productprice">Price (in Rs.)</label>
-                    <input type="text" class="form-control" name="productprice" placeholder="Product Price">
+                    <label for="productprice">Price (in Rs.)<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <input type="text" class="form-control" id = "productprice" name="productprice" value = "<%= pb.getProductprice() %>" placeholder="Product Price">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="category">Category</label>
-                    <select name="category" class="form-control" style = "font-size: 12px;">
-                    <option selected>Choose Category...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    </select>
+                    <label for="category">Category<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                    <select name="category" id = "category" class="form-control" style = "font-size: 12px;">
+                    	<option value = "-1">Choose Category...</option>
+                    	<option selected style = "background-color:grey;font-size:bolder;color:white;"><%= pb.getCategory() %></option>
+                    	<option>Fashion</option>
+						<option>Electronics</option>
+						<option>Home Appliances</option>
+						<option>Home & Kitchen</option>
+						<option>Furniture</option>
+						<option>Grocery</option>
+						<option>Mobile's</option>
+						<option>Women's Beauty</option>
+						<option>Men's Footware</option>
+						<option>Baby & Kids</option>
+						<option>Health Care Essentials</option>
+						<option>Sports, Fitness & Outdoors</option>
+					</select>
                 </div>
             </div>
 
@@ -102,13 +123,14 @@
                     <p>Allow To Cash On Delivery</p>
                 </div>
                 <div class="col-2 text-right">
-                    <input type = "checkbox" >
+                
+                    <input type = "checkbox" name = "cashondelivery" value = "Cash On Delivery" <%= pb.getCashondelivery().equals("Cash On Delivery")?"checked":"" %>>
                 </div>
                 <div class="col-10">
                     <p>Allow Return</p>
                 </div>
                 <div class="col-2 text-right">
-                    <input type = "checkbox">
+                    <input type = "checkbox" name = "allowreturn" id = "allowreturn" value = "Allow Return" <%= pb.getAllowreturn().equals("Allow Return")?"checked":"" %>>
                 </div>
                 
             </div>
@@ -129,77 +151,60 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="form-group col">
-                            <label for="sizeheight">Size (in Height)</label>
-                            <input type="text" class="form-control" name="sizeheight" placeholder="Size In Height">
+                            <label for="sizeheight">Height (In Inch)</label>
+                            <input type="text" id = "height" class="form-control" name="height" value = "<%= pb.getHeight() %>"placeholder="Height">
                         </div>
                         <div class="form-group col">
-                            <label for="sizewidth">Size (in Width)</label>
-                            <input type="text" class="form-control" name="sizewidth" placeholder="Size In Width">
+                            <label for="sizewidth">Weight (In kg)<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                            <input type="text" id = "weight" class="form-control" name="weight" value = "<%= pb.getWeight() %>" placeholder="Weight">
                         </div>
-                    </div>
+                    </div> 
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="form-group col">
-                            <label for="stock">Total Stock</label>
-                            <input type="text" class="form-control" name="stock" placeholder="Total Stock">
+                            <label for="sizeheight">Width (In Inch)</label>
+                            <input type="text" id = "width" class="form-control" name="width" value = "<%= pb.getWidth() %>" placeholder="Width">
                         </div>
                         <div class="form-group col">
-                            <label for="returnperiod">Return Period</label>
-                            <input type="text" class="form-control" name="returnperiod" placeholder="Return Period">
+                            <label for="sizewidth">Length (In Inch)</label>
+                            <input type="text" id = "length" class="form-control" name="length" value = "<%= pb.getLength() %>" placeholder="Length">
                         </div>
-                    </div>  
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <br>
-                        <textarea style="width: 100%;"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12" >
-				  <div class="form-group">
-                        <label for="upload">Upload Images</label>
-                        <div id="drag-drop-area"></div>
-                  </div>
+				<div class="col-md-6">
+					<div class = "form-group">
+						<label for="stock">Total Stock<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label> 
+						<input type="text" id = "stock" class="form-control" name="stock" value = "<%= pb.getStock() %>" placeholder="Total Stock">
+					</div>
 				</div>
+				<div class="col-md-6">
+					<div class = "form-group">
+						<label for="returnperiod">Return Period (In Day)<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label> 
+						<input type="text" id = "returnperiod" class="form-control" name="returnperiod" value = "<%= pb.getReturnperiod() %>" placeholder="Return Period">
+					</div>
+				</div>
+				<div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">Description<span style = "color:red;font-size:14px;font-weight:bolder;">*</span></label>
+                        <br>
+                        <textarea style="width: 100%;height:500px;"  name = "description" class = "form-control" maxlength="5000" id="message"><%= pb.getDescription() %></textarea>
+                        <div id="counter" style = "float:right;margin-top:5px;"></div>
+                    </div>
+                </div>
                 
             </div>
             
             <div class = "text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary form-control"  data-toggle="modal" data-target="#exampleModalCenter" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
+                <button type="submit" class="btn btn-primary form-control" id = "onsubmitbutton" style = "font-size: 12px;font-weight: bolder;" >Submit</button>
             </div>
             
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <div class = "modal-symbol">
-                            <img src="https://media.giphy.com/media/YlSR3n9yZrxfgVzagm/giphy.gif" class="modal-image" style = "height:100px; width: 100px;"> <!-- saved -->
-                            <!-- <img src="https://media.giphy.com/media/L2NX9o62VOsZqH8IPp/giphy.gif" class="modal-image">  delete -->
-                            <!-- <img src="https://media.giphy.com/media/hlvIX2f1zeLESr2DI4/giphy.gif" class="modal-image">  update -->  
-                        </div>
-                    Data Saved Successfully!!!
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button> -->
-                        <button type="button" class="btn btn-primary" onclick = "validation()">Okay</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-            
-            <br>
         </form>
-        
+        <div class = "text-center mt-3">
+			<b><span id = "errorspan" style = "font-size:small;font-weight:bolder;color:red"></span></b>
+		</div>
+        <br>
         
     </div>
     
@@ -244,83 +249,117 @@
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.js"></script>
     
     <script>
-	    var uppy = Uppy.Core()
-	    .use(Uppy.Dashboard, {
-	      inline: true,
-	      target: '#drag-drop-area'
-	    })
-	    .use(Uppy.Tus, {endpoint: 'https://master.tus.io/files/'}) //you can put upload URL here, where you want to upload images
+    
+    $(document).ready(function(){
+        $('#allowreturn').click(function(){
+            if($(this).prop("checked") == true){
+            	$('#returnperiod').attr('readonly', false);
+            }
+            else if($(this).prop("checked") == false){
+            	$('#returnperiod').attr('readonly', true);
+            	
+            }
+        });
+    });
+    
+	//  var contactexp = /^\d{10}$/;
+	//	var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	//	var zipexp = /^\d{6}$/;
+	//	var letterexp = /^[A-Za-z]+$/;
+		var numberexp = /\d+/g;
 	
-		uppy.on('complete', (result) => {
-		  console.log('Upload complete! We’ve uploaded these files:', result.successful)
-		})    
-	  
-	  	uppy.getPlugin('Dashboard').setOptions({
-		  width: 1200
-		})
-		
-		uppy.setOptions({
-		  restrictions: { 
-			  	maxFileSize: null,
-			    minFileSize: null,
-			    maxTotalFileSize: 250,
-			    maxNumberOfFiles: 10,
-			    minNumberOfFiles: null,
-			    allowedFileTypes: null  
-		  },
-		  
-		})
-		
+		$('#onsubmitbutton').click(function() {
+			
+			var uploadlen = $('#dynamic_field tr').length;
+			
+			if($('#productname').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Product Name";
+				return false;
+			}
+			else if($('#productprice').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Product Price";
+				return false;
+			}
+			else if(!(/\d+/g.test($('#productprice').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Product Price";
+				return false;
+			}
+			else if($('#category').val() == -1){
+				document.getElementById('errorspan').innerHTML = "Select Product Category";
+				return false;
+			}
+			else if(!($('#height').val() == '') && !(/\d+/g.test($('#height').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Height";
+				return false;
+			}
+			else if($('#weight').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Weight";
+				return false;
+			}
+			else if(!($('#weight').val() == '') && !(/\d+/g.test($('#weight').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Weight";
+				return false;
+			}
+			else if(!($('#width').val() == '') && !(/\d+/g.test($('#width').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Width";
+				return false;
+			}
+			else if(!($('#length').val() == '') && !(/\d+/g.test($('#length').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Length";
+				return false;
+			}
+			else if($('#stock').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Stock";
+				return false;
+			}
+			else if(!(/\d+/g.test($('#stock').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Stock";
+				return false;
+			}
+			else if(!($('#returnperiod').val() == '') && !(/\d+/g.test($('#returnperiod').val()))){
+				document.getElementById('errorspan').innerHTML = "Enter Number Only In Return Period";
+				return false;
+			}
+			else if($('#message').val() == ''){
+				document.getElementById('errorspan').innerHTML = "Enter Description";
+				return false;
+			}
+			else{
+				document.getElementById('errorspan').innerHTML = "";
+				return true;
+			}
+			
+			return true;
+		});	
 		
 	</script>
-    <script type="text/JavaScript">
-        function  validation() {
-            window.location.href = "Shop";
-        }
-    </script>
-    
+		
     <script>
+			const messageEle = document.getElementById('message');
+			const counterEle = document.getElementById('counter');
+
+			messageEle.addEventListener('input', function(e) {
+				const target = e.target;
+
+				// Get the `maxlength` attribute
+				const maxLength = target.getAttribute('maxlength');
+				
+				// Count the current number of characters
+				const currentLength = target.value.length;
+
+				counterEle.innerHTML = currentLength+ "/" +maxLength;
+			});
+	</script>
+	
+   	<script>
         function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
         
-        
-        $( function() {
-          var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
-          ];
-          $( "#tags" ).autocomplete({
-            source: availableTags,
-            autoFocus:true
-          });
-        } );
-
-        
-        </script>
+	</script>
+	
 </body>
 </html>
