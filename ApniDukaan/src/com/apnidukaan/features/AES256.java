@@ -35,7 +35,7 @@ public class AES256 {
     
     return null;
   }
-
+  
   public static String decrypt(String strToDecrypt) {
     try {
       byte[] iv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -55,4 +55,9 @@ public class AES256 {
     }
     return null;
   }
+  
+  public static void main(String args[]) {
+	  System.out.println(decrypt("yykOmpLYMdKSV/6MfNd9VQ=="));
+  }
+  
 }

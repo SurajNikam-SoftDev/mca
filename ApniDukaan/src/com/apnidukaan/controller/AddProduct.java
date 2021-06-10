@@ -151,8 +151,11 @@ public class AddProduct extends HttpServlet {
 //		System.out.println(session.getAttribute("emailid").toString());
 		String userid = UserDao.getUserIdByEmail(session.getAttribute("emailid").toString());
 		pb.setUserid(userid);
+
 		
-		
+		session.setAttribute("ProductBeanDetails", pb); 
+		//System.out.println("session set succesfully");
+		response.sendRedirect("./ProductImageUpload");
 		
 	}
 	
