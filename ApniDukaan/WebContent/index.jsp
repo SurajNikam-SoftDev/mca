@@ -112,10 +112,10 @@ display: block;
                     <div class="col text-right pt-1">
                         <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
-                    
                     <div class="col-md-12 pt-2">
-                        <form action="Search" method="POST" style = "z-index:0" >
+                        <form action="Search" method="GET" style = "z-index:0" >
                             <div class="input-group">
+                            	<input type = "hidden" value = "1" name = "page">
                             	<div class="input-group-append">
                             		<div class="btn-group">
 						                <button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;z-index:0;"><span class="selection">All</span><span class="caret"></span></button>
@@ -135,22 +135,22 @@ display: block;
 	                                        <li><a href="javascript:void(0)">Sports, Fitness & Outdoors</a></li>
 						                </ul>
 						            </div> 
-									<input type = "hidden" class = "searchcategory">
- 				            
+									<input type = "hidden" name = "category" class = "searchcategory" value = "All">
+ 				            		
 								</div>
-                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control search-box-pre" id = "search1" placeholder="Search..." name = "q" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
+                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" id = "searchsubmit" style = "height:40px;width:45px;" ><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;" >search</i></button>
                                 </div>
                               </div>
-                        </form>
+                        
                     </div>
                     <div class="col-md-12 sticky">
-                        <form action="Search" method="POST" >
+                        
                             <div class="input-group">
                             	<div class="input-group-append">
                             		<div class="btn-group">
-						                <button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;"><span class="selection">All</span><span class="caret"></span></button>
+                            			<button type="button" class="btn btn-default dropdown-toggle" id = "AdvancedSearch" data-toggle="dropdown"  style = "width:auto;background-color:lightgrey;border-radius:5px 0px 0px 5px;font-size:12px;font-weight:bolder;"><span class="selection">All</span><span class="caret"></span></button>
 						                <ul class="dropdown-menu scrollable-menu"  id="dropdown" style = "font-size:12px;color:black;" role="menu">
 						                   <li><a href="javascript:void(0)">All</a></li>
 						                    <li><a href="javascript:void(0)">Fashion</a></li>                     
@@ -167,11 +167,10 @@ display: block;
 	                                        <li><a href="javascript:void(0)">Sports, Fitness & Outdoors</a></li>
 						                </ul>
 						            </div> 
-						            
 								</div>
-                                <input type="text" class="form-control search-box-pre" id="tags" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control search-box-pre" id = "search2" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
+                                	<button type = "submit" class = "input-group-text search-box-post bg-warning" id = "onsearchbutton" style = "height:40px;width:45px;"><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">search</i></button>
                                 </div>
                               </div>
                         </form>
@@ -412,7 +411,7 @@ display: block;
 		  <div class="cards-slider" style = "padding:0px 0px">
 		  	<div class = "" style = "padding:25px;">
 		  		<b style = "font-size:16px;font-weight:bolder;float:left;">Fashion</b>
-		  		<a href="javascript:void(0)" onclick="location.href='Search'"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
+		  		<a href="javascript:void(0)" onclick="location.href='Search?page=1&category=Fashion&q='"  style = "float:right;padding-top:6px;font-weight:bolder;">View More</a>
 		  	</div>
 		  
 		  	<hr> 
@@ -430,7 +429,7 @@ display: block;
 		          	<div class = "card product-card" style="background-color: white;border-radius:18px;">
 		          		<div class = "card-image text-center" style ="height:253.12px;width:253.12px;padding:10px;">
 							<img class="card-img-top" src="http://<%=IP.getHostAddress() %>/uploads/<%= product.getProdimg1() %>"
-							alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin-left: auto;margin-right: auto;display: block;"><!--  height= "323.25" width = "323.25" -->
+							alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin-left: auto;margin-right: auto;display: block;"  onContextMenu="return false;">
 						</div>
 		          		
                         <div class="card-body" style = "border-radius:18px;">
@@ -1982,6 +1981,14 @@ display: block;
                     }
                 }]
             });
+        });
+        
+        var input = document.getElementById("#search1");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("#searchsubmit").click();
+            }
         });
         </script>
        

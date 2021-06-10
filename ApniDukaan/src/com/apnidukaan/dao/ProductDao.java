@@ -307,6 +307,49 @@ public class ProductDao {
 		return lpb;
 	}
 	
+	public static int getProductCountByCategory(String category, String search)
+	{
+		int count = 0;
+		
+		try {
+			Connection con = DBConnection.getConnection();
+			String query = null;
+			
+			if(category.equalsIgnoreCase("All") && search.length() == 0)
+			{
+				System.out.println("select COUNT(pid) FROM products");
+				query = "select COUNT(pid) FROM products";
+			}	
+			else if(category.length() != 0 && search.length() == 0)
+			{
+				System.out.println("select COUNT(pid)  from products where category = '"+category+"'");
+				query = "select COUNT(pid)  from products where category = '"+category+"'";
+			}
+			else if(search.length() != 0)
+			{
+				System.out.println("select COUNT(pid) from products where productname LIKE '%"+search+"%' OR productsubtitle LIKE '%"+search+"%' AND category = '"+category+"'");
+				query= "select COUNT(pid) from products where productname LIKE '%"+search+"%' OR productsubtitle LIKE '%"+search+"%' AND category = '"+category+"'";
+			}
+			
+			PreparedStatement ps= con.prepareStatement(query);
+			
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+				count = rs.getInt("count(pid)");
+//				System.out.println("count :: "+count);
+			} 
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}	
+		return count;
+	}
+	
 	public static List<ProductBean> getWishListProduct(String emailid)
 	{
 		List<ProductBean> lpb = new ArrayList<ProductBean>();
@@ -411,6 +454,60 @@ public class ProductDao {
 			Connection con = DBConnection.getConnection();
 			PreparedStatement ps= con.prepareStatement("select pid, prodimg1, productname, productprice  from products where category = ? ORDER BY prodratings desc");
 			ps.setString(1, category);
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+					
+				 ProductBean pb= new ProductBean();
+		         pb.setPid(rs.getInt("pid"));
+		         pb.setProdimg1(rs.getString("prodimg1"));
+		         pb.setProductname(rs.getString("productname"));
+		         pb.setProductprice(rs.getString("productprice"));
+//		         System.out.println(rs.getInt("pid") + " :: " + rs.getString("prodimg1") + " :: " + rs.getString("productname") + " :: " + rs.getString("productprice"));
+		         lpb.add(pb); 
+			}
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		return lpb;
+	}
+	
+	public static List<ProductBean> getProductsByCategoryStartEnd(String category, int start, int end, String search)
+	{
+		List<ProductBean> lpb = new ArrayList<ProductBean>();
+		
+		try {
+			Connection con = DBConnection.getConnection();  
+
+			String query = null; 
+			
+			if(category.equalsIgnoreCase("All") && search.length() == 0)
+			{
+//				System.out.println("select pid, prodimg1, productname, productprice  from products ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ");
+				query = "select pid, prodimg1, productname, productprice  from products ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ";
+			}	
+			else if(category.length() != 0 && search.length() == 0) 
+			{ 
+//				System.out.println("select pid, prodimg1, productname, productprice  from products where category = '"+category+"' ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ");
+				query = "select pid, prodimg1, productname, productprice  from products where category = '"+category+"' ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ";
+			}
+			else if(search.length() != 0) 
+			{  		
+//				System.out.println("select pid, prodimg1, productname, productprice  from products where productname LIKE '%"+search+"%' OR productsubtitle LIKE '%"+search+"%' AND category = '"+category+"' ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ");
+				query= "select pid, prodimg1, productname, productprice  from products where productname LIKE '%"+search+"%' OR productsubtitle LIKE '%"+search+"%' AND category = '"+category+"' ORDER BY prodratings desc LIMIT "+ (start-1) +", "+ (end-1) +" ";
+			}
+			
+			
+			
+			
+			PreparedStatement ps= con.prepareStatement(query);
+			
 			ResultSet rs = ps.executeQuery(); 
 			
 			while(rs.next())
@@ -916,7 +1013,7 @@ public class ProductDao {
 			
 			}
 			
-			System.out.println(sql);
+//			System.out.println(sql);
 			
 		
 			
@@ -957,7 +1054,7 @@ public class ProductDao {
 						 
 					 }
 					 else { 
-						 System.out.println(UPLOAD_DIRECTORY+"/"+imgname.get(i));
+//						 System.out.println(UPLOAD_DIRECTORY+"/"+imgname.get(i));
 						 File file = new File(UPLOAD_DIRECTORY+"/"+imgname.get(i));
 						 if(file.delete())  
 					     {
