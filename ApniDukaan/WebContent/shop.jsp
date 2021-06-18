@@ -138,9 +138,9 @@
 			<div class="col-md-3" style="padding: 5px;">
 				<div class="card product-card"
 					style="background-color: white; border-radius: 18px;">
-					<div class = "card-image text-center" style ="height:323.25px;width:323.25px;padding:15px;">
+					<div class = "card-image mx-auto" style ="height:323.25px;width:323.25px;padding:15px;">
 						<img class="card-img-top" src="http://<%=IP.getHostAddress() %>/uploads/<%= product.getProdimg1() %>"
-						alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin-left: auto;margin-right: auto;display: block;"><!--  height= "323.25" width = "323.25" -->
+						alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin:0 auto;display: block;"><!--  height= "323.25" width = "323.25" -->
 					</div>
 					
 					<div class="card-body" style="border-radius: 18px;">

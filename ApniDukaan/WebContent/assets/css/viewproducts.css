@@ -16,16 +16,20 @@
     padding: 0 25px;
     right: 0; 
     border-radius:15px;
+   
   }
   #carousel-thumbs img {
     border: 5px solid transparent;
     cursor: pointer;
+    
   }
   #carousel-thumbs img:hover {
     border-color: rgba(255,255,255,.3);
+    
   }
   #carousel-thumbs .selected img {
     border-color: #fff;
+   
   }
   .carousel-control-prev,
   .carousel-control-next {
@@ -34,23 +38,24 @@
   @media all and (max-width: 767px) {
     .carousel-container #carousel-thumbs img {
       border-width: 3px;
+      
     }
     
-    .carousel-item img {
-	    object-fit: cover;
-	    height:250px;
-	    width:250px;
-  	}
+    
   }
   @media all and (min-width: 576px) {
     .carousel-container #carousel-thumbs {
       position: absolute;
     }
+    
+     
   }
   @media all and (max-width: 576px) {
     .carousel-container #carousel-thumbs {
       background: #eee;
     }
+    
+     
   }
 
 

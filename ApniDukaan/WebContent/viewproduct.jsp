@@ -194,18 +194,18 @@
             </div>
             
             <!-- Carousel Navigation -->
-            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel" style = "padding:0">
-              <div class="carousel-inner" style = ";height:100px;">
-                <div class="carousel-item active" style = "">
+            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" style = "height:100px;">
+                <div class="carousel-item active" >
                   <div class="row mx-0">
                   	<%
                 		if(pb.getProdimg1().equals("undefined")){}
 	                	else{
 	                %>
                     <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
+                      <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid"  alt="...">
                     </div>
-                    <%
+                    <% 
 	                	}
                     	if(pb.getProdimg2().equals("undefined")){}
 	                	else{
@@ -257,7 +257,7 @@
 	                	if(pb.getProdimg4().equals("undefined")){}
 	                	else{
 	                %>
-                    <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                    <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" style = "height:80px;width:80px" data-target="#myCarousel" data-slide-to="6">
                       <img src="http://<%=IP.getHostAddress() %>/uploads/<%= pb.getProdimg1() %>" class="img-fluid" alt="...">
                     </div>
                     <%
@@ -320,7 +320,7 @@
           <p class="delivery"><%= pb.getCashondelivery() %></p>
           <div class="policies">
             <b>Prepaid Available</b>
-            <p><%= pb.getAllowreturn().equals("Allow Return") && pb.getReturnperiod().equals("0")? "Not Allowed Return" :pb.getAllowreturn() +" "+ pb.getReturnperiod() %></p>
+            <p><%= pb.getAllowreturn().equals("Allow Return") && pb.getReturnperiod().equals("0")? "Not Allowed Return" :pb.getAllowreturn() +" "+ pb.getReturnperiod() %> Days.</p>
           </div>
           
         </div>

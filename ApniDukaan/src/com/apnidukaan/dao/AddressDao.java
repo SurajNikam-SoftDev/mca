@@ -91,7 +91,7 @@ public class AddressDao {
 			
 			while(rs.next())
 			{
-				address = rs.getString("mobileno")+", "+rs.getString("housebuilding")+", "+rs.getString("roadarea")+", "+rs.getString("city")+", "+rs.getString("state")+", "+rs.getString("lankmark")+", "+rs.getString("pincode");
+				address = rs.getString("housebuilding")+", "+rs.getString("roadarea")+", "+rs.getString("city")+", "+rs.getString("state")+", "+rs.getString("lankmark")+", "+rs.getString("pincode");
 			}
 			
 			ps.close();
