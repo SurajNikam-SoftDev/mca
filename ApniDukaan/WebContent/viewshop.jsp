@@ -1,3 +1,11 @@
+<%@page import="com.apnidukaan.bean.UserBean"%>
+<%@page import="com.apnidukaan.dao.UserDao"%>
+<%@page import="com.apnidukaan.dao.ProductDao"%>
+<%@page import="com.apnidukaan.bean.ProductBean"%>
+<%@page import="java.util.List"%>
+<%@page import="java.net.InetAddress"%>
+<%@page import="com.apnidukaan.dao.AddProductToCardDao"%>
+<%@page import="com.apnidukaan.dao.AddressDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isErrorPage="true" %>
 <!DOCTYPE html>
@@ -30,6 +38,14 @@
 	{
 		response.sendRedirect("./LogIn");
 	}	
+
+	String key = request.getParameter("key") != null || request.getParameter("key") != ""
+	? request.getParameter("key")
+	: "undefined";
+	key = key.isEmpty() ? "undefined" : key; 
+	
+	InetAddress IP=InetAddress.getLocalHost(); 
+	List<ProductBean> list = ProductDao.getAllRecordsProductsById(key);
 %> 
     <header> 
         <div class="header">
@@ -41,11 +57,26 @@
                     <div class="col text-left pt-1">
                         <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
-                        <b style="padding-top: 0px;">Your Location</b>
+                        <%
+                        	String city = AddressDao.getCurrentLocationUsingEmailid(session.getAttribute("emailid").toString());
+                        %>
+                        <b style="padding-top: 0px;"><%= city.equals("undefined")?"Add Address":city %></b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                    <%
+                    	int cartcount = AddProductToCardDao.getCountofCardUsingEmailid(session.getAttribute("emailid").toString());
+                    %>
+                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white">
+                    <%
+                    	if(cartcount > 0)
+                    	{	
+                    %>    
+                        <span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;"><%= cartcount %></span>
+                    <%
+                    	}
+                    %>    
+                        <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                     <div class="col-md-12 pt-2">
                         <form action="ShopProductSearch" method="GET" >
@@ -76,7 +107,10 @@
     </header>
 
     <div class="viewshop-container">
-        <h3 style = "text-align: center;">Shop Name</h3>
+<%
+	UserBean ub = UserDao.getShopDetailById(key);
+%>
+        <h3 style = "text-align: center;"><%= ub.getShopname().equals("undefined")?"":ub.getShopname() %> <small>(Owner Name <%= ub.getName() %>)</small></h3>
         
         <div class="rating-section">
             <b style = "font-size: small;">shop ratings:</b>
@@ -87,330 +121,67 @@
             <span class="fa fa-star staricon" style = "color: black;"></span>
             3/5.
         </div>
-        <b style = "float: right;">Total Shop Products : 100</b>
+        <b style = "float: right;">Total Shop Products : <%= ProductDao.getCountOfProductById(key) %></b>
     </div>
 	
 	<div class="container-fluid pt-2" style = "padding:25px" >
         <div class="row">
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div> 
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div> 
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>  
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col" style="padding:5px;">
-                        <div class = "card product-card" style="background-color: white;border-radius:18px;">
-                            <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap" style = "border-radius:18px;">
-                            <div class="card-body" style = "border-radius:18px;">
-                                
-                                <p class="card-text text-left"><b>Product Title </b><br/> Some quick example text to build on the card title</p>
-                                <p class="card-text text-right inr-price">Rs. 650.00</p>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Add To Cart" style = "border-radius:0px 0px 0px 18px;" onclick="addtocartproduct()"><i class="material-icons nav__icon pt-2" style ="color:white;">add_shopping_cart</i></button>
-                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="WishList" onclick="addwishlist()"><i class="material-icons nav__icon pt-2" style ="color:white;">favorite_border</i></button>
-                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Buy Product" style = "border-radius:0px 0px 18px 0px;font-size:13px;font-weight:bolder;" onclick="viewproduct()">Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            
-            
-            
-                  
+<%
+	for(ProductBean product: list)
+	{	
+		
+//		System.out.println(product.getPid() +" :: "+ product.getProdimg1() +" :: "+ product.getProductname() +" :: "+ product.getProductprice());
+%>
+            <div class="col-md-3" style="padding: 5px;">
+				<div class="card product-card"
+					style="background-color: white; border-radius: 18px;">
+					<div class = "card-image mx-auto" style ="height:323.25px;width:323.25px;padding:15px;">
+						<img class="card-img-top" src="http://<%=IP.getHostAddress() %>/uploads/<%= product.getProdimg1() %>"
+						alt="Product Image" style="border-radius: 18px;height:100%;width:100%;object-fit:contain;margin:0 auto;display: block;"><!--  height= "323.25" width = "323.25" -->
+					</div>
+					
+					<div class="card-body" style="border-radius: 18px;">
+
+						<p class="card-text text-left">
+							<b><%= product.getProductname().length() > 40? product.getProductname().substring(0, 40)+"...": product.getProductname() %></b>
+						</p>
+						<p class="card-text text-right inr-price">Rs. <%= product.getProductprice() %></p>
+					</div>
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<a class="btn btn-warning" data-toggle="tooltip"
+							data-placement="top" title="Add To Cart"
+							style="border-radius: 0px 0px 0px 18px;"
+							onclick="location.href='AddProductToCart?key=<%=product.getPid()%>'"><i
+							class="material-icons nav__icon pt-2" style="color: white;">add_shopping_cart</i></a> 
+						
+						<a class="btn btn-danger" data-toggle="tooltip"
+							data-placement="top" title="Add To WishList"
+							onclick="location.href='AddProductToWishList?key=<%=product.getPid()%>'"><i
+							class="material-icons nav__icon pt-2" style="color: white;">favorite_border</i></a> 
+							
+						<a class="btn btn-success pt-3" data-toggle="tooltip"
+							data-placement="top" title="Buy Product"
+							style="border-radius: 0px 0px 18px 0px; font-size: 13px; font-weight: bolder;"
+							onclick="location.href='ViewProduct?key=<%=product.getPid()%>'">Buy</a>
+					</div>
+				</div>
+			</div>
+<%
+	}
+%>                
         </div>
     </div>
+<%
+if(list.isEmpty())
+	{
+%> 
 	
-    <br>    
-    <div class="page-pagination">
-        <a href="#" class="previous">&laquo; Previous</a>
-        <a href="#" class="next">Next &raquo;</a>      
-    </div> 
-
+	<div class="pageheading text-center p-3 mt-1" style = "background-color: lightgrey;">
+        <b style = "font-size: 14px;">0 Products</b>
+    </div>
+<%
+	}
+%> 	
     <br>
     <div class="container " >
         <p>Copyright @ 2021 All Rights Reserved. Terms of Use | Privacy Policy AND Website Design and Developed By <b style = "font-style:oblique;font-weight:bolder;">Suraj Nikam</b></p>

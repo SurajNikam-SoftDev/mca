@@ -478,6 +478,37 @@ public class ProductDao {
 		return lpb;
 	}
 	
+	public static List<ProductBean> getProductsForTopRating()
+	{
+		List<ProductBean> lpb = new ArrayList<ProductBean>();
+		
+		try {
+			Connection con = DBConnection.getConnection();
+			PreparedStatement ps= con.prepareStatement("SELECT pid, prodimg1, productname, productprice FROM products ORDER BY prodratings DESC LIMIT 10");
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+					
+				 ProductBean pb= new ProductBean();
+		         pb.setPid(rs.getInt("pid"));
+		         pb.setProdimg1(rs.getString("prodimg1"));
+		         pb.setProductname(rs.getString("productname"));
+		         pb.setProductprice(rs.getString("productprice"));
+//		         System.out.println(rs.getInt("pid") + " :: " + rs.getString("prodimg1") + " :: " + rs.getString("productname") + " :: " + rs.getString("productprice"));
+		         lpb.add(pb); 
+			}
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		return lpb;
+	}
+	
 	public static List<ProductBean> getProductsByCategoryStartEnd(String category, int start, int end, String search)
 	{
 		List<ProductBean> lpb = new ArrayList<ProductBean>();
@@ -1119,6 +1150,65 @@ public class ProductDao {
 		}
 		
 		return imgname;
+	}
+	
+	public static List<ProductBean> getAllRecordsProductsById(String userid)
+	{
+		List<ProductBean> lpb = new ArrayList<ProductBean>();
+		
+		try {
+			Connection con = DBConnection.getConnection();
+//			System.out.println("select pid, prodimg1, productname, productprice  from products where userid = '"+userid+"'");
+			PreparedStatement ps= con.prepareStatement("select pid, prodimg1, productname, productprice, productsubtitle from products where userid = ? AND status = 1");
+			ps.setString(1, userid);
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+				 ProductBean pb= new ProductBean();
+		         pb.setPid(rs.getInt("pid"));
+		         pb.setProdimg1(rs.getString("prodimg1"));
+		         pb.setProductname(rs.getString("productname"));
+		         pb.setProductsubtitle(rs.getString("productsubtitle"));
+		         pb.setProductprice(rs.getString("productprice"));
+//		         System.out.println(rs.getInt("pid") + " :: " + rs.getString("prodimg1") + " :: " + rs.getString("productname") + " :: " + rs.getString("productprice"));
+		         lpb.add(pb);  
+			}
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return lpb;
+	}
+	
+	public static int getCountOfProductById(String userid)
+	{
+		int count = 0;
+		
+		try {
+			Connection con = DBConnection.getConnection();
+//			System.out.println("select pid, prodimg1, productname, productprice  from products where userid = '"+userid+"'");
+			PreparedStatement ps= con.prepareStatement("select count(pid) from products where userid = ? AND status = 1");
+			ps.setString(1, userid);
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+				 count = rs.getInt("count(pid)");
+			}
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return count;
 	}
 
 }

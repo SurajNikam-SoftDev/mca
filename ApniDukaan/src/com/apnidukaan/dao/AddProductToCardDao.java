@@ -91,4 +91,33 @@ public class AddProductToCardDao {
 		
 		return status;
 	}
+	
+	public static int getCountofCardUsingEmailid(String emailid)
+	{
+		int count = 0;
+		
+		try {
+			Connection con = DBConnection.getConnection();
+			
+			PreparedStatement ps= con.prepareStatement("SELECT COUNT(cid) FROM cart, user WHERE emailid = ? AND user.userid = cart.userid");
+			ps.setString(1, emailid);
+			
+			ResultSet rs = ps.executeQuery(); 
+			
+			if(rs.next())
+			{
+				count = rs.getInt("COUNT(cid)");
+//				System.out.println("Cart Count :: "+count);
+			}
+			
+			
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
 }

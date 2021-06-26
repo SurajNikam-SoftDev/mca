@@ -224,5 +224,33 @@ public class AddressDao {
 		}
 		 return status;
 	}
+	
+	public static String getCurrentLocationUsingEmailid(String emailid)
+	{
+		String city = "undefined";
+		
+		try {
+			Connection con = DBConnection.getConnection();
+			
+			PreparedStatement ps= con.prepareStatement("SELECT city FROM address, user WHERE emailid = ? AND user.userid = address.userid LIMIT 1");
+			ps.setString(1, emailid);
+			
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+				city = rs.getString("city");
+				
+			}
+			System.out.println(city);
+			ps.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}	
+		
+		return city;
+	}
 
 }

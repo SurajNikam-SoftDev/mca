@@ -1,3 +1,5 @@
+<%@page import="com.apnidukaan.dao.AddProductToCardDao"%>
+<%@page import="com.apnidukaan.dao.AddressDao"%>
 <%@page import="java.util.List"%>
 <%@page import="com.apnidukaan.dao.PlaceOrderDao"%>
 <%@page import="com.apnidukaan.bean.OrderBean"%>
@@ -49,11 +51,26 @@
                     <div class="col text-left pt-1">
                         <a href="javascript:void(0)" onclick="location.href='MyAddress'" style = "color:white;text-decoration: none;">
                         <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">room</i>
-                        <b style="padding-top: 0px;">Your Location</b>
+                        <%
+                        	String city = AddressDao.getCurrentLocationUsingEmailid(session.getAttribute("emailid").toString());
+                        %>
+                        <b style="padding-top: 0px;"><%= city.equals("undefined")?"Add Address":city %></b>
                         </a>
                     </div>
                     <div class="col text-right pt-1">
-                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white"><span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;">10</span><i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
+                    <%
+                    	int cartcount = AddProductToCardDao.getCountofCardUsingEmailid(session.getAttribute("emailid").toString());
+                    %>
+                        <a href="javascript:void(0)" onclick="location.href='AddToCart'" style = "text-decoration: none;color:white">
+                    <%
+                    	if(cartcount > 0)
+                    	{	
+                    %>    
+                        <span class="badge rounded-pill bg-danger pt-1" style = "font-weight: bolder;font-size: 13px;"><%= cartcount %></span>
+                    <%
+                    	}
+                    %>    
+                        <i class="material-icons nav__icon" style ="color:white;font-weight: bolder;">shopping_cart</i></a>
                     </div>
                 </div>
                 <!--/row-->
@@ -97,7 +114,7 @@
                     <td><%= order.getPrice() %></td>
                     <td><%= order.getDate_created() %></td>
                     <td class = "text-center">
-	                    <a href="javascript:void(0)" class = "btn btn-warning" data-toggle="tooltip" data-placement="top" title="View Order Details" onclick="location.href='ViewOrder?key=<%= order.getPid() %>'" style = "padding:3px;font-size:5px;color:white;text-decoration: none;"><i class="material-icons">visibility</i></a>
+	                    <a href="javascript:void(0)" class = "btn btn-warning" data-toggle="tooltip" data-placement="top" title="View Order Details" onclick="location.href='ViewOrder?key=<%= order.getPid() %>&refno=<%= order.getReferenceno() %>'" style = "padding:3px;font-size:5px;color:white;text-decoration: none;"><i class="material-icons">visibility</i></a>
 <%
 	if(order.getOpstatus().equalsIgnoreCase("Pending"))
 	{
