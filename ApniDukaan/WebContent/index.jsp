@@ -1,3 +1,7 @@
+<%@page import="com.apnidukaan.dao.SliderADVTDao"%>
+<%@page import="com.apnidukaan.bean.SliderADVTBean"%>
+<%@page import="com.apnidukaan.dao.FixedADVTDao"%>
+<%@page import="com.apnidukaan.bean.FixedADVTBean"%>
 <%@page import="com.apnidukaan.dao.AddressDao"%>
 <%@page import="com.apnidukaan.dao.AddProductToCardDao"%>
 <%@page import="com.apnidukaan.bean.ProductBean"%>
@@ -203,24 +207,43 @@ display: block;
               <li data-target="#demo" data-slide-to="0" class="active"></li>
               <li data-target="#demo" data-slide-to="1"></li>
               <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+              <li data-target="#demo" data-slide-to="4"></li>
             </ul>
             <div class="carousel-inner">
+<%
+	List<SliderADVTBean> lsab = SliderADVTDao.getSliderADVT();
+%>	            
               <div class="carousel-item active">
-                <img src="assets/img/2_1.jpg" alt="Los Angeles" width="1100" height="400">
+                <img src="http://<%=IP.getHostAddress() %>/uploads/<%= lsab.get(0).getAdvtimage() %>" width="1100" height="400">
                 <div class="carousel-caption">
                   <!-- <h3>Los Angeles</h3>
                   <p>We had such a great time in LA!</p> -->
                 </div>   
               </div>
               <div class="carousel-item">
-                <img src="assets/img/2_2.jpg" alt="Chicago" width="1100" height="400">
+                <img src="http://<%=IP.getHostAddress() %>/uploads/<%= lsab.get(1).getAdvtimage() %>" width="1100" height="400">
                 <div class="carousel-caption">
                   <!-- <h3>Chicago</h3>
                   <p>Thank you, Chicago!</p> -->
                 </div>   
               </div>
               <div class="carousel-item">
-                <img src="assets/img/2_3.jpg" alt="New York" width="1100" height="400">
+                <img src="http://<%=IP.getHostAddress() %>/uploads/<%= lsab.get(2).getAdvtimage() %>" width="1100" height="400">
+                <div class="carousel-caption">
+                  <!-- <h3>New York</h3>
+                  <p>We love the Big Apple!</p> -->
+                </div>   
+              </div>
+              <div class="carousel-item">
+                <img src="http://<%=IP.getHostAddress() %>/uploads/<%= lsab.get(3).getAdvtimage() %>" width="1100" height="400">
+                <div class="carousel-caption">
+                  <!-- <h3>New York</h3>
+                  <p>We love the Big Apple!</p> -->
+                </div>   
+              </div>
+              <div class="carousel-item">
+                <img src="http://<%=IP.getHostAddress() %>/uploads/<%= lsab.get(4).getAdvtimage() %>" width="1100" height="400">
                 <div class="carousel-caption">
                   <!-- <h3>New York</h3>
                   <p>We love the Big Apple!</p> -->
@@ -298,14 +321,17 @@ display: block;
 		    </div>
 		  </div>
 	</div>
-	
+
+<%
+	List<FixedADVTBean> lfab = FixedADVTDao.getFixedADVT();
+%>	
 	<div style = "box-shadow:none;margin:0px 15px 0px 15px;">
 		<div class = "row">
 			<div class = "col-md-6 mt-2">
-				<img src = "assets/img/2_2.jpg" class = "advt-image" style = "float:left;"/>
+				<img src="http://<%=IP.getHostAddress() %>/uploads/<%= lfab.get(0).getPhotoimage() %>" class = "advt-image" style = "float:left;"/>
 			</div>
 			<div class = "col-md-6 mt-2">
-				<img src = "assets/img/2_6.jpg" class = "advt-image" style = "float:right;"/>
+				<img src="http://<%=IP.getHostAddress() %>/uploads/<%= lfab.get(1).getPhotoimage() %>" class = "advt-image" style = "float:right;"/>
 			</div>
 		</div>
 		
@@ -417,7 +443,7 @@ display: block;
 	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
 		<div class = "row">
 			<div class = "col-md-12">
-				<img src = "assets/img/2_2.jpg" class = "advt-image"/>
+				<img src="http://<%=IP.getHostAddress() %>/uploads/<%= lfab.get(2).getPhotoimage() %>" class = "advt-image"/>
 			</div>
 		</div>
 		
@@ -640,7 +666,7 @@ display: block;
 	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
 		<div class = "row">
 			<div class = "col-md-12">
-				<img src = "assets/img/2_5.jpg" class = "advt-image"/>
+				<img src="http://<%=IP.getHostAddress() %>/uploads/<%= lfab.get(3).getPhotoimage() %>" class = "advt-image"/>
 			</div>
 		</div>
 		
@@ -1140,7 +1166,7 @@ display: block;
 	<div class="page m-3" style = "background-color:white;border-radius:18px;box-shadow:none;">
 		<div class = "row">
 			<div class = "col-md-12">
-				<img src = "assets/img/2_6.jpg" class = "advt-image"/>
+				<img src="http://<%=IP.getHostAddress() %>/uploads/<%= lfab.get(4).getPhotoimage() %>" class = "advt-image"/>
 			</div>
 		</div>
 		
