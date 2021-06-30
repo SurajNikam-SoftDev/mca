@@ -227,7 +227,7 @@ public class AddressDao {
 	
 	public static String getCurrentLocationUsingEmailid(String emailid)
 	{
-		String city = "undefined";
+		String city = "undefined"; 
 		
 		try {
 			Connection con = DBConnection.getConnection();
@@ -242,7 +242,7 @@ public class AddressDao {
 				city = rs.getString("city");
 				
 			}
-			System.out.println(city);
+//			System.out.println(city);
 			ps.close();
 			con.close();
 		}
